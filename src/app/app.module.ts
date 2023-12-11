@@ -19,6 +19,12 @@ const routes: Route[] = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
