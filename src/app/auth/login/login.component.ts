@@ -6,26 +6,23 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  constructor(private authSrv: AuthService, private router: Router) {}
 
-  constructor(private authSrv: AuthService, private router: Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  submit(form: NgForm){
+  submit(form: NgForm) {
     console.log(form.value);
     try {
-      this.authSrv.login(form.value).subscribe()
-      this.router.navigate(['/'])
+      this.authSrv.login(form.value).subscribe();
+      this.router.navigate(['/']);
     } catch (error) {
-      alert('Login errato!')
+      alert('Login errato!');
       console.log(error);
-      this.router.navigate(['/login'])
-      form.reset()
+      this.router.navigate(['/login']);
+      // form.reset()
     }
   }
-
 }

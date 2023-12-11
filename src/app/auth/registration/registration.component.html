@@ -6,7 +6,7 @@
     class="row justify-content-center align-items-center border border-dark rounded mt-3"
   >
     <div class="col-6">
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="signUp()">
         <div class="form-group">
           <label for="name">Nome</label>
           <input
@@ -127,20 +127,30 @@
             >
               Calcio
             </option>
-            <option value="https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Tennis</option>
-            <option value="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Parigi</option>
-            <option value="https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">luna</option>
-            <option value="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Mare</option>
+            <option
+              value="https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+              Tennis
+            </option>
+            <option
+              value="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+              Parigi
+            </option>
+            <option
+              value="https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+              luna
+            </option>
+            <option
+              value="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+              Mare
+            </option>
           </select>
         </div>
 
-        <button
-          type="submit"
-          class="btn btn-outline-dark mt-2"
-          (click)="signUp()"
-        >
-          Invia
-        </button>
+        <button type="submit" class="btn btn-outline-dark mt-2">Invia</button>
       </form>
     </div>
   </div>

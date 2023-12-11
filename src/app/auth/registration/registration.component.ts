@@ -28,7 +28,10 @@ export class RegistrationComponent implements OnInit {
       surname: this.fb.control(null, [Validators.required]),
       username: this.fb.control(null, [Validators.required]),
       email: this.fb.control(null, [Validators.required, Validators.email]),
-      password: this.fb.control(null, [Validators.required, Validators.maxLength(8)]),
+      password: this.fb.control(null, [
+        Validators.required,
+        Validators.maxLength(8),
+      ]),
       imageProf: this.fb.control(null, [Validators.required]),
       city: this.fb.control(null, [Validators.required]),
       phone: this.fb.control(null, [Validators.required]),
@@ -43,15 +46,15 @@ export class RegistrationComponent implements OnInit {
     return this.form.get(nome);
   }
 
-  signUp(){
+  signUp() {
     console.log(this.form.value);
     try {
       this.authSrv.register(this.form.value).subscribe();
-      this.router.navigate(['/login'])
-    } catch (error:any) {
+      this.router.navigate(['/login']);
+    } catch (error: any) {
       console.log(error);
-        alert('Email già registrata')
-        this.router.navigate(['/register'])
+      alert('Email già registrata');
+      this.router.navigate(['/register']);
     }
   }
 }

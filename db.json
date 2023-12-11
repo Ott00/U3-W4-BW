@@ -1,23 +1,48 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874"
-      },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": {
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
-      }
+      "email": "ott@gmail.com",
+      "password": "$2a$10$9Ko6ZpWk.Cctcs/mcka9jupRu.OhXS2nsW6cUw77JTtvMp.MhAEBu",
+      "name": "Ott",
+      "surname": "Ott",
+      "username": "Ott",
+      "imageProf": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Fano",
+      "phone": "3334447788",
+      "id": 2
+    },
+    {
+      "email": "ale@gmail.com",
+      "password": "$2a$10$LiMBO6JBr6iUJX.v5KtRje/c1uUQPaElwEgINTxENabcxSZDf4FIC",
+      "name": "Ale",
+      "surname": "Ang",
+      "username": "Ale",
+      "imageProf": "https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Trento",
+      "phone": "32525625696",
+      "id": 3
+    },
+    {
+      "email": "ros@gmail.com",
+      "password": "$2a$10$XVnCsZnY93mdtCDT62WWOemx3zk1LX.1uQ8.gSoNJ4cqzAxGwtanC",
+      "name": "rosario",
+      "surname": "ros",
+      "username": "ros",
+      "imageProf": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Sicilia",
+      "phone": "2145858989",
+      "id": 4
+    },
+    {
+      "email": "dino@gmail.com",
+      "password": "$2a$10$qTlXKpT2HqTgZ.tuhdLDn.zZHFaffOz5.r9nzRB3gaTnzxWB8v7Xm",
+      "name": "dino",
+      "surname": "dino",
+      "username": "dino",
+      "imageProf": "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Abruzzo",
+      "phone": "2323232323",
+      "id": 5
     }
   ],
   "posts": [
