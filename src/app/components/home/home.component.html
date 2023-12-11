@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="container-fluid">
+  <div class="row px-5">
+    <ng-container *ngFor="let post of posts">
+      <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 gy-3">
+        <div class="card pointer h-100 mb-2">
+          <div class="card-body">
+            <div class="d-flex align-items-baseline">
+              <i class="bi bi-person-circle"></i>
+              <p class="ms-2 fw-bold">User {{ post.userId }}</p>
+            </div>
+            <h5 class="card-title text-capitalize">{{ post.title }}</h5>
+            <p class="card-text">
+              {{ post.body }}
+            </p>
+            <div class="position-absolute bottom-0 end-0 m-2">
+              <button class="btn btn-danger">
+                <i class="bi bi-heart-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
