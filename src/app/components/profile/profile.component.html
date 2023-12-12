@@ -65,16 +65,26 @@
     <div class="col-12 col-xxl-8">
       <h3 class="text-center my-4">Post</h3>
       <div class="row">
-        <ng-container *ngFor="let post of postsProf">
+        <ng-container *ngFor="let post of postsProf; let i = index">
           <div
             *ngIf="userId === post.userId"
             class="col-12 col-sm-6 col-md-4 col-xxl-4 mb-4 px-3"
           >
             <div class="card pointer h-100 mb-2">
               <div class="card-body">
-                <div class="d-flex align-items-baseline">
-                  <i class="bi bi-person-circle"></i>
-                  <p class="ms-2 fw-bold">User {{ post.userId }}</p>
+                <div
+                  class="d-flex justify-content-between align-items-baseline"
+                >
+                  <div class="d-flex align-items-baseline">
+                    <i class="bi bi-person-circle"></i>
+                    <p class="ms-2 fw-bold">User {{ post.userId }}</p>
+                  </div>
+                  <button
+                    class="btn border-0 p-0"
+                    (click)="removePost(post.id)"
+                  >
+                    <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
+                  </button>
                 </div>
                 <h5 class="card-title text-capitalize">
                   {{ post.title }}
@@ -82,6 +92,26 @@
                 <p class="card-text">
                   {{ post.body }}
                 </p>
+                <div class="position-absolute bottom-0 end-0 m-3 z-1">
+                  <a class="btn border-0 p-0" data-bs-toggle="collapse"  href="#{{post.id}}" role="button" aria-expanded="false" (click)="addValue(form, post.id)">
+                    <i class="bi bi-pencil-square fs-5 text-warning"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="collapse" id="{{post.id}}">
+                <div class="card card-body border-0">
+                  <form #form="ngForm" (ngSubmit)="editPost(form, post.id)">
+                    <div class="form-group">
+                        <label for="title">Titolo</label>
+                        <input type="text" id="title" name="title" required class="form-control" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Contenuto</label>
+                        <textarea type="text" id="body" name="body" required class="form-control" ngModel cols="20" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark mt-2 " [disabled]="form.invalid">Salva</button>
+                </form>
+                </div>
               </div>
             </div>
           </div>

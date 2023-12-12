@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
+import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -19,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   //PER POSTS
   postsProf: Post[] = [];
+  postEdit: Post[] = []
 
   constructor(private postSrv: PostsService) {}
 
@@ -47,5 +50,32 @@ export class ProfileComponent implements OnInit {
       this.postsProf = posts;
       console.log(this.postsProf);
     });
+  }
+
+  removePost(postId: number) {
+    this.postSrv.removePost(postId).subscribe(() => {
+      console.log('Post rimosso!');
+      this.getPosts();
+    });
+  }
+
+  addValue(form: NgForm ,postId: number){
+    this.postEdit = this.postsProf.filter((element: Post) => element.id === postId)
+    const Obj = {
+      title: this.postEdit[0].title,
+      body: this.postEdit[0].body
+    }
+    form.form.setValue(Obj)
+    console.log(Obj);
+    
+  }
+
+  editPost(form: NgForm, postId: number){
+    console.log(form.value);
+    console.log(postId);
+    this.postSrv.editPost(form.value, postId).subscribe(() =>{
+      console.log('Post modificato');
+      this.getPosts()
+    })
   }
 }
