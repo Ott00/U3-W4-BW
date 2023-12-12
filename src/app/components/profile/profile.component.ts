@@ -48,4 +48,11 @@ export class ProfileComponent implements OnInit {
       console.log(this.postsProf);
     });
   }
+
+  removePost(postId: number) {
+    this.postSrv.removePost(postId).subscribe(() => {
+      console.log('Post rimosso!');
+      this.getPosts();
+    });
+  }
 }
