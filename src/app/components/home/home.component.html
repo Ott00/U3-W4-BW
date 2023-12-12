@@ -2,7 +2,10 @@
   <div class="row px-3">
     <ng-container *ngFor="let post of posts">
       <div class="col-12 col-lg-6 col-xxl-4 gy-3">
-        <div class="card pointer h-100 mb-2" (click)="changePage(post.id)">
+        <div
+          class="card pointer h-100 mb-2 bg-postshare text-white"
+          (click)="changePage(post.id)"
+        >
           <div class="card-body">
             <div class="d-flex align-items-baseline">
               <i class="bi bi-person-circle"></i>

@@ -2,8 +2,16 @@
   width: calc(100vw - 118px);
 }
 
+.bg-postshare {
+  background-color: #1e1e21;
+}
+
 @media screen and (min-width: 768px) {
   .router {
     width: calc(100vw - 296px);
   }
 }
+
+// #2dc9f9 azzurro
+// #1e1e21 grigio scuro
+// #DCDCDC grigio chiaro
