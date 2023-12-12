@@ -1,10 +1,19 @@
-.navbar {
+.navbar,
+.container-fluid {
   height: 100vh;
-  width: 280px;
+  min-width: 100px;
 }
 
 .container-fluid {
   height: 100vh;
+}
+
+.navbar-nav {
+  height: 82vh;
+}
+
+.logo-1 {
+  display: none;
 }
 
 .nav-link {
@@ -23,4 +32,28 @@
 
 .bg-postshare {
   background-color: #1e1e21;
+}
+
+.title-nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .title-nav {
+    display: inline;
+  }
+
+  .logo-1 {
+    display: inline-block;
+  }
+
+  .logo-2 {
+    display: none;
+  }
+
+  .navbar,
+  .container-fluid {
+    height: 100vh;
+    min-width: 280px;
+  }
 }

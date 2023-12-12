@@ -1,17 +1,28 @@
 <nav class="navbar navbar-expand bg-postshare position-fixed">
   <div class="container-fluid d-flex justify-content-center align-items-start">
-    <div class="flex flex-column py-5">
-      <a class="navbar-brand" href="#">
+    <div class="flex flex-column py-5 align-items-center">
+      <a class="navbar-brand m-0 d-flex justify-content-center" href="#">
         <img
           src="../../../assets/Logo PostShare.png"
           alt="Logo PostShare"
           width="200px"
+          class="logo-1"
+        />
+        <img
+          src="../../../assets/Logo PostShare Min.png"
+          alt="Logo PostShare Min"
+          width="50px"
+          class="logo-2"
         />
       </a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 d-flex flex-column justify-content-between">
-          <div class="d-flex flex-column py-5 gap-3">
+        <ul
+          class="navbar-nav w-100 d-flex flex-column align-content-between justify-content-between"
+        >
+          <div
+            class="d-flex flex-column py-5 gap-3 align-items-center align-items-md-start"
+          >
             <li class="nav-item" *ngIf="user">
               <a
                 class="nav-link"
@@ -19,43 +30,48 @@
                 [routerLink]="['/']"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
-                ><i class="bi bi-house-door-fill"></i> Home</a
-              >
+                ><i class="bi bi-house-door-fill"></i>
+                <span class="title-nav"> Home</span>
+              </a>
             </li>
             <li class="nav-item" *ngIf="user">
               <a
                 class="nav-link"
                 [routerLink]="['/profile']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-circle"></i> Profilo</a
-              >
+                ><i class="bi bi-person-circle"></i>
+                <span class="title-nav"> Profilo</span>
+              </a>
             </li>
             <li class="nav-item" *ngIf="user">
               <a
                 class="nav-link"
                 [routerLink]="['/backoffice']"
                 routerLinkActive="active"
-                ><i class="bi bi-plus-circle"></i> Crea Post</a
-              >
+                ><i class="bi bi-plus-circle"></i>
+                <span class="title-nav"> Crea Post</span>
+              </a>
             </li>
             <li class="nav-item" *ngIf="!user">
               <a
                 class="nav-link"
                 [routerLink]="['/login']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-check"></i> Login</a
-              >
+                ><i class="bi bi-person-check"></i>
+                <span class="title-nav"> Login</span>
+              </a>
             </li>
             <li class="nav-item" *ngIf="!user">
               <a
                 class="nav-link"
                 [routerLink]="['/registration']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-plus"></i> Registrazione</a
-              >
+                ><i class="bi bi-person-plus"></i>
+                <span class="title-nav"> Registrazione</span>
+              </a>
             </li>
           </div>
-          <div class="position-absolute bottom-0 mb-5">
+          <div class="align-self-start">
             <li class="nav-item" *ngIf="user">
               <button class="btn text-dark" (click)="logout()">
                 <i
