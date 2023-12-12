@@ -145,6 +145,17 @@
             </div>
           </div>
         </ng-container>
+        <div class="row">
+          <h3 class="text-center my-4">Commenti</h3>
+          <ng-container>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let comment of commentPost">
+                <p><strong>{{ comment.name }}</strong> - {{ comment.body }}</p>
+                <p class="text-end fw-bold text-lowercase"><small>{{comment.email}}</small></p>
+              </li>
+            </ul>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>

@@ -26,8 +26,12 @@ export class PostsService {
     return this.http.get<Comment[]>(this.commentApi);
   }
 
-  editPost(data: Partial<Post>, postId: number): Observable<Post>{
+  editPost(data: Partial<Post>, postId: number): Observable<Post> {
     console.log(data);
-    return this.http.patch<Post>(`${this.postApi}/${postId}`, data)
+    return this.http.patch<Post>(`${this.postApi}/${postId}`, data);
+  }
+
+  setPost(data: { userId: number; title: string; body: string }) {
+    return this.http.post<Post>(`${this.postApi}`, data);
   }
 }

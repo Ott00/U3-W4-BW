@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
+import { Comment } from 'src/app/models/comment';
 import { NgForm } from '@angular/forms';
 import { from } from 'rxjs';
 @Component({
@@ -22,6 +23,9 @@ export class ProfileComponent implements OnInit {
   //PER POSTS
   postsProf: Post[] = [];
   postEdit: Post[] = [];
+  comments: Comment[] = []
+  commentPost: Comment[] = []
+
 
   postFocus: boolean = false;
 
@@ -45,6 +49,7 @@ export class ProfileComponent implements OnInit {
     }
 
     this.getPosts();
+    this.getComments()
   }
 
   getPosts() {
@@ -91,5 +96,14 @@ export class ProfileComponent implements OnInit {
       console.log('Post modificato');
       this.getPosts();
     });
+  }
+
+  getComments(){
+    this.postSrv.getComments().subscribe((comment: Comment[] )=> {
+      this.comments = comment
+      console.log(this.comments);
+      this.commentPost = (this.comments.filter((element: Comment) => element.email === this.userEmail))
+      console.log(this.commentPost);
+    })
   }
 }

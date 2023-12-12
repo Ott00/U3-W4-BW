@@ -27,6 +27,11 @@ const routes: Route[] = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'backoffice',
+    component: BackOfficeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'details/:id',
     component: DetailsComponent,
     canActivate: [AuthGuard],
