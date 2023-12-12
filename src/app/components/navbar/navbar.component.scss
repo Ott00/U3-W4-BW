@@ -1,0 +1,26 @@
+.navbar {
+  height: 100vh;
+  width: 280px;
+}
+
+.container-fluid {
+  height: 100vh;
+}
+
+.nav-link {
+  color: rgb(163, 163, 163);
+  font-weight: bold;
+  font-size: 18px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.nav-link.active {
+  color: white;
+}
+
+.bg-postshare {
+  background-color: #1e1e21;
+}
