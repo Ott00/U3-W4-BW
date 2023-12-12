@@ -1,86 +1,91 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
-      <h1>IL MIO PROFILO</h1>
-      <div class="card">
-        <div class="additional">
-          <div class="user-card">
-            <div id="prof-img" class="mx-auto mt-5 overflow-hidden">
-              <img src="{{ userImageProf }}" alt="" />
+    <div class="col-12 col-xxl-4">
+      <h3 class="text-center my-4">Profilo</h3>
+      <div class="d-flex justify-content-center">
+        <div class="custom-card">
+          <div class="additional">
+            <div class="user-custom-card">
+              <div id="prof-img" class="mx-auto mt-5 overflow-hidden">
+                <img src="{{ userImageProf }}" alt="" />
+              </div>
+              <div class="points center">team leader</div>
             </div>
-            <div class="points center">team leader</div>
-          </div>
-          <div class="more-info">
-            <h1 id="margin-mine">{{ userName }} {{ userSurname }}</h1>
-            <div
-              class="d-flex flex-column justify-content-around text-white p-3 pt-0"
-            >
-              <div class="mb-3">
-                <div class="fw-bold">CITY</div>
-                <div>{{ userCity }}</div>
+            <div class="more-info">
+              <h3 id="margin-mine">{{ userName }} {{ userSurname }}</h3>
+              <div
+                class="d-flex flex-column justify-content-around text-white p-3 pt-0"
+              >
+                <div class="mb-3">
+                  <div class="fw-bold">CITY</div>
+                  <div>{{ userCity }}</div>
+                </div>
+                <div>
+                  <div class="fw-bold">PHONE</div>
+                  <div>{{ userPhone }}</div>
+                </div>
               </div>
-              <div>
-                <div class="fw-bold">PHONE</div>
-                <div>{{ userPhone }}</div>
-              </div>
-            </div>
-            <div class="stats">
-              <div>
-                <div class="title">ID</div>
-                <i class="fa fa-trophy"></i>
-                <div class="value">{{ userId }}</div>
-              </div>
-              <div>
-                <div class="title">POST</div>
-                <i class="fa fa-gamepad"></i>
-                <div class="value">N POST</div>
-              </div>
+              <div class="stats">
+                <div>
+                  <div class="title">ID</div>
+                  <i class="fa fa-trophy"></i>
+                  <div class="value">{{ userId }}</div>
+                </div>
+                <div>
+                  <div class="title">POST</div>
+                  <i class="fa fa-gamepad"></i>
+                  <div class="value">N POST</div>
+                </div>
 
-              <div>
-                <div class="title">Coffee</div>
-                <i class="fa fa-coffee"></i>
-                <div class="value infinity">∞</div>
+                <div>
+                  <div class="title">Coffee</div>
+                  <i class="fa fa-coffee"></i>
+                  <div class="value infinity">∞</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="general">
-          <h1>{{ userName }} {{ userSurname }}</h1>
-          <div class="d-flex flex-column justify-content-around">
-            <div class="mb-3">
-              <div class="fw-bold">USERNAME</div>
-              <div>{{ userUsername }}</div>
-            </div>
-            <div>
-              <div class="fw-bold">EMAIL</div>
-              <div>{{ userEmail }}</div>
+          <div class="general">
+            <h3>{{ userName }} {{ userSurname }}</h3>
+            <div class="d-flex flex-column justify-content-around">
+              <div class="mb-3">
+                <div class="fw-bold">USERNAME</div>
+                <div>{{ userUsername }}</div>
+              </div>
+              <div>
+                <div class="fw-bold">EMAIL</div>
+                <div>{{ userEmail }}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-7 offset-1">
-      <h1>I MIEI POST</h1>
-      <div class="d-flex flex-wrap">
-        <div *ngFor="let post of postsProf">
-          <ng-container *ngIf="userId === post.userId">
-            <div>
-              <div class="card pointer h-100 mb-2">
-                <div class="card-body">
-                  <div class="d-flex align-items-baseline">
-                    <i class="bi bi-person-circle"></i>
-                    <p class="ms-2 fw-bold">User {{ post.userId }}</p>
-                  </div>
-                  <h5 class="card-title text-capitalize">{{ post.title }}</h5>
-                  <p class="card-text">
-                    {{ post.body }}
-                  </p>
+    <div class="col-12 col-xxl-8">
+      <h3 class="text-center my-4">Post</h3>
+      <div class="row">
+        <ng-container *ngFor="let post of postsProf">
+          <div
+            *ngIf="userId === post.userId"
+            class="col-12 col-sm-6 col-md-4 col-xxl-4 mb-4 px-3"
+          >
+            <div class="card pointer h-100 mb-2">
+              <div class="card-body">
+                <div class="d-flex align-items-baseline">
+                  <i class="bi bi-person-circle"></i>
+                  <p class="ms-2 fw-bold">User {{ post.userId }}</p>
                 </div>
+                <h5 class="card-title text-capitalize">
+                  {{ post.title }}
+                </h5>
+                <p class="card-text">
+                  {{ post.body }}
+                </p>
               </div>
             </div>
-          </ng-container>
-        </div>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>

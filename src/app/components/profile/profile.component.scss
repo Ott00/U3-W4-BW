@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Abel");
-
-html,
-body {
-  background: #fceeb5;
-  font-family: Abel, Arial, Verdana, sans-serif;
+.card {
+  border-right: 4px solid grey;
+  border-bottom: 4px solid grey;
 }
 
 .center {
@@ -13,49 +10,50 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.card {
+.custom-card {
   width: 450px;
   height: 250px;
   background-color: #fff;
   background: linear-gradient(#f8f8f8, #fff);
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  // box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-right: 4px solid grey;
+  border-bottom: 4px solid grey;
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-  margin: 1.5rem;
 }
 
-.card h1 {
+.custom-card h3 {
   text-align: center;
 }
 
-.card .additional {
+.custom-card .additional {
   position: absolute;
   width: 150px;
   height: 100%;
-  background: linear-gradient(#de685e, #ee786e);
+  background: linear-gradient(#060606, #3f3f3f);
   transition: width 0.4s;
   overflow: hidden;
   z-index: 2;
 }
 
-.card.green .additional {
+.custom-card.green .additional {
   background: linear-gradient(#92bca6, #a2ccb6);
 }
 
-.card:hover .additional {
+.custom-card:hover .additional {
   width: 100%;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 3px 3px 0;
 }
 
-.card .additional .user-card {
+.custom-card .additional .user-custom-card {
   width: 150px;
   height: 100%;
   position: relative;
   float: left;
 }
 
-.card .additional .user-card::after {
+.custom-card .additional .user-custom-card::after {
   content: "";
   display: block;
   position: absolute;
@@ -65,24 +63,23 @@ body {
   border-left: 2px solid rgba(0, 0, 0, 0.025);
 }
 
-.card .additional .user-card .level,
-.card .additional .user-card .points {
+.custom-card .additional .user-custom-card .level,
+.custom-card .additional .user-custom-card .points {
   top: 15%;
   color: #fff;
   text-transform: uppercase;
   font-size: 0.75em;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.15);
-  padding: 0.125rem 0.75rem;
   border-radius: 100px;
   white-space: nowrap;
 }
 
-.card .additional .user-card .points {
+.custom-card .additional .user-custom-card .points {
   top: 85%;
 }
 
-.card .additional .more-info {
+.custom-card .additional .more-info {
   width: 300px;
   float: left;
   position: absolute;
@@ -90,30 +87,30 @@ body {
   height: 100%;
 }
 
-.card .additional .more-info h1 {
+.custom-card .additional .more-info h3 {
   color: #fff;
   margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
+.custom-card.green .additional .more-info h3 {
   color: #224c36;
 }
 
-.card .additional .coords {
+.custom-card .additional .coords {
   margin: 0 1rem;
   color: #fff;
   font-size: 1rem;
 }
 
-.card.green .additional .coords {
+.custom-card.green .additional .coords {
   color: #325c46;
 }
 
-.card .additional .coords span + span {
+.custom-card .additional .coords span + span {
   float: right;
 }
 
-.card .additional .stats {
+.custom-card .additional .stats {
   font-size: 2rem;
   display: flex;
   position: absolute;
@@ -124,36 +121,36 @@ body {
   color: #fff;
 }
 
-.card.green .additional .stats {
+.custom-card.green .additional .stats {
   color: #325c46;
 }
 
-.card .additional .stats > div {
+.custom-card .additional .stats > div {
   flex: 1;
   text-align: center;
 }
 
-.card .additional .stats i {
+.custom-card .additional .stats i {
   display: block;
 }
 
-.card .additional .stats div.title {
+.custom-card .additional .stats div.title {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.card .additional .stats div.value {
+.custom-card .additional .stats div.value {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.5rem;
 }
 
-.card .additional .stats div.value.infinity {
+.custom-card .additional .stats div.value.infinity {
   font-size: 2.5rem;
 }
 
-.card .general {
+.custom-card .general {
   width: 300px;
   height: 100%;
   position: absolute;
@@ -165,7 +162,7 @@ body {
   padding-top: 0;
 }
 
-.card .general .more {
+.custom-card .general .more {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
