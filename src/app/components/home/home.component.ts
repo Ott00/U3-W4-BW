@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private postSrv: PostsService) {}
+  constructor(private postSrv: PostsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getPosts();
@@ -21,5 +22,9 @@ export class HomeComponent implements OnInit {
       this.posts = posts;
       console.log(this.posts);
     });
+  }
+
+  changePage(id: number) {
+    this.router.navigate([`/details/${id}`]);
   }
 }
