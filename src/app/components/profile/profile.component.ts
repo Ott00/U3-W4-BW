@@ -21,7 +21,9 @@ export class ProfileComponent implements OnInit {
 
   //PER POSTS
   postsProf: Post[] = [];
-  postEdit: Post[] = []
+  postEdit: Post[] = [];
+
+  postFocus: boolean = false;
 
   constructor(private postSrv: PostsService) {}
 
@@ -59,23 +61,35 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  addValue(form: NgForm ,postId: number){
-    this.postEdit = this.postsProf.filter((element: Post) => element.id === postId)
+  addValue(form: NgForm, postId: number, e: Event) {
+    this.postEdit = this.postsProf.filter(
+      (element: Post) => element.id === postId
+    );
     const Obj = {
       title: this.postEdit[0].title,
-      body: this.postEdit[0].body
-    }
-    form.form.setValue(Obj)
+      body: this.postEdit[0].body,
+    };
+    form.form.setValue(Obj);
     console.log(Obj);
-    
+
+    //Logica per colorare il post selezionato e il corrispettivo form di modifica
+    this.postFocus = !this.postFocus;
+    const btn = e.currentTarget as HTMLAnchorElement;
+    const card = btn.parentElement?.parentElement?.parentElement;
+
+    if (this.postFocus) {
+      card?.classList.add('card-focus');
+    } else {
+      card?.classList.remove('card-focus');
+    }
   }
 
-  editPost(form: NgForm, postId: number){
+  editPost(form: NgForm, postId: number) {
     console.log(form.value);
     console.log(postId);
-    this.postSrv.editPost(form.value, postId).subscribe(() =>{
+    this.postSrv.editPost(form.value, postId).subscribe(() => {
       console.log('Post modificato');
-      this.getPosts()
-    })
+      this.getPosts();
+    });
   }
 }
