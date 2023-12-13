@@ -1,5 +1,6 @@
 .router {
   width: calc(100vw - 118px);
+  height: 100vh;
 }
 
 .bg-postshare {
@@ -9,6 +10,7 @@
 @media screen and (min-width: 768px) {
   .router {
     width: calc(100vw - 296px);
+    height: 100vh;
   }
 }
 
