@@ -7,9 +7,11 @@
           (click)="changePage(post.id)"
         >
           <div class="card-body">
-            <div class="d-flex align-items-baseline">
-              <i class="bi bi-person-circle"></i>
-              <p class="ms-2 fw-bold">User {{ post.userId }}</p>
+            <div  *ngFor="let user of users">
+              <div class="d-flex align-items-baseline" *ngIf="user.id === post.userId" id="card-user">
+                <div id="img-card-profile"><img src={{user.imageProf}} alt=""></div>
+                <p class="ms-2 fw-bold">{{user.username}}</p>
+              </div>
             </div>
             <h5 class="card-title text-capitalize">{{ post.title }}</h5>
             <p class="card-text">

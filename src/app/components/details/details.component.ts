@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
+import { User } from 'src/app/models/user';
 import { Comment } from 'src/app/models/comment';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,6 +18,8 @@ export class DetailsComponent implements OnInit {
   posts: Post[] = [];
   comments: Comment[] = []
   commentPost: Comment[] = []
+  users: User[] = []
+  user: User[] = []
 
 
   constructor(private postSrv: PostsService, private route: ActivatedRoute) { }
@@ -25,6 +28,7 @@ export class DetailsComponent implements OnInit {
     this.takeId()
     this.getPostDetail()
     this.getComments()
+    this.getUsers()
   }
 
   getPostDetail(){
@@ -42,6 +46,14 @@ export class DetailsComponent implements OnInit {
       console.log(this.comments);
       this.commentPost = (this.comments.filter((element: Comment) => element.postId === this.id))
       console.log(this.commentPost);
+    })
+  }
+
+  getUsers(){
+    this.postSrv.getUsers().subscribe((users: User[]) =>{
+      this.users = users
+      this.user = this.users.filter((element: User) => element.id === this.post?.userId)
+      console.log(this.user);
     })
   }
 

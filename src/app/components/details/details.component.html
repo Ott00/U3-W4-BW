@@ -1,10 +1,10 @@
 <div *ngIf="post">
     <div class="card">
       <div class="card-body">
-        <div class="d-flex align-items-baseline">
-          <i class="bi bi-person-circle"></i>
-          <p class="ms-2 fw-bold">User {{ post.userId }}</p>
-        </div>
+          <div class="d-flex align-items-baseline" *ngFor="let user of user" id="card-user">
+            <div id="img-card-profile"><img src={{user.imageProf}}></div>
+            <p class="ms-2 fw-bold">{{user.username}}</p>
+          </div>
         <h5 class="card-title text-capitalize">{{ post.title }}</h5>
         <p class="card-text">
           {{ post.body }}
@@ -17,7 +17,8 @@
     <h4>Comments:</h4>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let comment of commentPost">
-        <p><strong>{{ comment.name }}</strong> - {{ comment.body }}</p>
+        <p class="m-2"><strong>{{ comment.name }}</strong></p> 
+        <p class="m-1">{{ comment.body }}</p>
         <p class="text-end fw-bold text-lowercase"><small>{{comment.email}}</small></p>
       </li>
     </ul>
