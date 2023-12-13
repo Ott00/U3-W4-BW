@@ -4,6 +4,7 @@ import { Post } from '../models/post';
 import { Comment } from '../models/comment';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Email } from '../models/email';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
 export class PostsService {
   postApi: string = environment.postApi;
   commentApi: string = environment.commentApi;
+  emailApi: string = environment.emailApi;
 
   constructor(private http: HttpClient) {}
 
@@ -33,5 +35,8 @@ export class PostsService {
 
   setPost(data: { userId: number; title: string; body: string }) {
     return this.http.post<Post>(`${this.postApi}`, data);
+  }
+  inviaEmail(email: Email): Observable<any> {
+    return this.http.post<Email>('http://localhost:4201/assistenza', email);
   }
 }
