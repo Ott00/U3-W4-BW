@@ -34,4 +34,7 @@ export class PostsService {
   setPost(data: { userId: number; title: string; body: string }) {
     return this.http.post<Post>(`${this.postApi}`, data);
   }
+  addComment(comment: Comment): Observable<Comment> {
+    return this.http.post<Comment>(`${this.commentApi}`, comment);
+  }
 }

@@ -1,24 +1,55 @@
 <div *ngIf="post">
-    <div class="card">
-      <div class="card-body">
-        <div class="d-flex align-items-baseline">
-          <i class="bi bi-person-circle"></i>
-          <p class="ms-2 fw-bold">User {{ post.userId }}</p>
-        </div>
-        <h5 class="card-title text-capitalize">{{ post.title }}</h5>
-        <p class="card-text">
-          {{ post.body }}
-        </p>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-baseline">
+        <i class="bi bi-person-circle"></i>
+        <p class="ms-2 fw-bold">User {{ post.userId }}</p>
       </div>
+      <h5 class="card-title text-capitalize">{{ post.title }}</h5>
+      <p class="card-text">
+        {{ post.body }}
+      </p>
     </div>
   </div>
   <div>
+    <h4>Add a Comment:</h4>
+    <form #form="ngForm" (ngSubmit)="addComment(form)">
+      <div class="mb-3">
+        <label for="commentName" class="form-label">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="commentName"
+          name="name"
+          [(ngModel)]="newComment.name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="commentBody" class="form-label">Comment:</label>
+        <textarea
+          class="form-control"
+          id="commentBody"
+          name="body"
+          [(ngModel)]="newComment.body"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+  </div>
+</div>
+<div>
   <div>
     <h4>Comments:</h4>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let comment of commentPost">
-        <p><strong>{{ comment.name }}</strong> - {{ comment.body }}</p>
-        <p class="text-end fw-bold text-lowercase"><small>{{comment.email}}</small></p>
+        <p>
+          <strong>{{ comment.name }}</strong> - {{ comment.body }}
+        </p>
+        <p class="text-end fw-bold text-lowercase">
+          <small>{{ comment.email }}</small>
+        </p>
       </li>
     </ul>
   </div>

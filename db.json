@@ -65,6 +65,17 @@
       "city": "Taranto",
       "phone": "23457865",
       "id": 7
+    },
+    {
+      "email": "rosariosca12@icloud.com",
+      "password": "$2a$10$hiMZ/lCkUDZALzeElHI6sumYZShSu89BlylC2RNEMtWPZVuOQkimm",
+      "name": "Rosario",
+      "surname": "Scilipoti",
+      "username": "ceddubeddu",
+      "imageProf": "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Aosta Valley",
+      "phone": "3457698672",
+      "id": 8
     }
   ],
   "posts": [
@@ -1961,6 +1972,13 @@
       "name": "in dolore iusto ex molestias vero",
       "email": "Letha@liliane.ca",
       "body": "dolorem fugit quidem animi quas quisquam reprehenderit\noccaecati et dolor laborum nemo sed quas unde deleniti\nfacere eligendi placeat aliquid aspernatur commodi sunt impedit\nneque corrupti alias molestiae magni tempora"
+    },
+    {
+      "postId": 61,
+      "id": 301,
+      "name": "RE",
+      "email": "rosariosca12@icloud.com",
+      "body": "E"
     }
   ]
 }
