@@ -1974,5 +1974,14 @@
       "body": "dolorem fugit quidem animi quas quisquam reprehenderit\noccaecati et dolor laborum nemo sed quas unde deleniti\nfacere eligendi placeat aliquid aspernatur commodi sunt impedit\nneque corrupti alias molestiae magni tempora"
     }
   ],
-  "assistenza": [{}]
+  "assistenza": [
+    {
+      "destinatario": "scasc",
+      "oggetto": "sono",
+      "corpo": "piero",
+      "userId": 7,
+      "userEmail": "samueless001@gmail.com",
+      "id": 1
+    }
+  ]
 }

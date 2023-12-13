@@ -17,6 +17,7 @@ export class AssistenzaComponent implements OnInit {
     userEmail: '',
   };
   userId!: number;
+  userEmail!: string;
 
   constructor(private postSrv: PostsService) {}
   ngOnInit(): void {
@@ -24,12 +25,20 @@ export class AssistenzaComponent implements OnInit {
     if (user) {
       const helpMe = JSON.parse(user);
       this.userId = helpMe.user.id;
+      this.userEmail = helpMe.user.email
       console.log(this.userId);
+      console.log(this.userEmail);
     }
   }
 
   inviaEmail(form: NgForm) {
     this.newEmail.userId = this.userId;
+    this.newEmail.userEmail = this.userEmail;
+    this.newEmail.corpo = form.value.corpo
+    this.newEmail.destinatario = form.value.destinatario
+    this.newEmail.oggetto = form.value.oggetto
+    console.log(this.newEmail);
+    
     this.postSrv.inviaEmail(this.newEmail).subscribe(
       (response) => {
         console.log('Email inviata con successo', response);
@@ -39,6 +48,6 @@ export class AssistenzaComponent implements OnInit {
         console.error("Errore nell'invio dell'email:", error);
       }
     );
-    console.log(form);
+    console.log(form.value);
   }
 }

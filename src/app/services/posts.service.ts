@@ -36,7 +36,9 @@ export class PostsService {
   setPost(data: { userId: number; title: string; body: string }) {
     return this.http.post<Post>(`${this.postApi}`, data);
   }
-  inviaEmail(email: Email): Observable<any> {
-    return this.http.post<Email>('http://localhost:4201/assistenza', email);
+
+  inviaEmail(email: Email){
+    console.log(email);
+    return this.http.post<Email>(`${this.emailApi}`, email);
   }
 }

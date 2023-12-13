@@ -1,5 +1,5 @@
-<!-- assistenza.component.html -->
-<div>
+<!-- <!-- assistenza.component.html -->
+<div class="text-light">
   <h4>Contact Support:</h4>
   <form #form="ngForm" (ngSubmit)="inviaEmail(form)">
     <div class="mb-3">
@@ -9,7 +9,7 @@
         class="form-control"
         id="destinatario"
         name="destinatario"
-        [(ngModel)]="newEmail.destinatario"
+        ngModel
         required
       />
     </div>
@@ -20,7 +20,7 @@
         class="form-control"
         id="oggetto"
         name="oggetto"
-        [(ngModel)]="newEmail.oggetto"
+        ngModel
         required
       />
     </div>
@@ -30,10 +30,10 @@
         class="form-control"
         id="corpo"
         name="corpo"
-        [(ngModel)]="newEmail.corpo"
+        ngModel
         required
       ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Send Email</button>
+    <button type="submit" class="btn btn-outline-info">Send Email</button>
   </form>
 </div>
