@@ -1,183 +1,55 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+}
+
+@media screen and (min-width: 1400px) {
+  .fixed-height {
+    height: calc(100vh - 3rem);
+  }
+}
+
+.custom-top {
+  top: 1.5rem;
+  box-shadow: 0px -50px 0px -2px #1e1e21, 0px 30px 30px -2px #1e1e21;
+}
+
+.custom-nav {
+  background-color: #0f0f10;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
 .card {
-  border-right: 4px solid grey;
-  border-bottom: 4px solid grey;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 .card-focus {
-  border-right: 4px solid #ffc15f;
-  border-bottom: 4px solid #ffc15f;
-}
+  border-right: 2px solid #2dc9f9;
+  border-bottom: 2px solid #2dc9f9;
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.custom-card {
-  width: 450px;
-  height: 250px;
-  background-color: #fff;
-  background: linear-gradient(#f8f8f8, #fff);
-  // box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-  border-right: 4px solid grey;
-  border-bottom: 4px solid grey;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-}
-
-.custom-card h3 {
-  text-align: center;
-}
-
-.custom-card .additional {
-  position: absolute;
-  width: 150px;
-  height: 100%;
-  background: linear-gradient(#060606, #3f3f3f);
-  transition: width 0.4s;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.custom-card.green .additional {
-  background: linear-gradient(#92bca6, #a2ccb6);
-}
-
-.custom-card:hover .additional {
-  width: 100%;
-  border-radius: 0 3px 3px 0;
-}
-
-.custom-card .additional .user-custom-card {
-  width: 150px;
-  height: 100%;
-  position: relative;
-  float: left;
-}
-
-.custom-card .additional .user-custom-card::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10%;
-  right: -2px;
-  height: 80%;
-  border-left: 2px solid rgba(0, 0, 0, 0.025);
-}
-
-.custom-card .additional .user-custom-card .level,
-.custom-card .additional .user-custom-card .points {
-  top: 15%;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
-  white-space: nowrap;
-}
-
-.custom-card .additional .user-custom-card .points {
-  top: 85%;
-}
-
-.custom-card .additional .more-info {
-  width: 300px;
-  float: left;
-  position: absolute;
-  left: 150px;
-  height: 100%;
-}
-
-.custom-card .additional .more-info h3 {
-  color: #fff;
-  margin-bottom: 0;
-}
-
-.custom-card.green .additional .more-info h3 {
-  color: #224c36;
-}
-
-.custom-card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.custom-card.green .additional .coords {
-  color: #325c46;
-}
-
-.custom-card .additional .coords span + span {
-  float: right;
-}
-
-.custom-card .additional .stats {
-  font-size: 2rem;
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  top: auto;
-  color: #fff;
-}
-
-.custom-card.green .additional .stats {
-  color: #325c46;
-}
-
-.custom-card .additional .stats > div {
-  flex: 1;
-  text-align: center;
-}
-
-.custom-card .additional .stats i {
-  display: block;
-}
-
-.custom-card .additional .stats div.title {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.custom-card .additional .stats div.value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.5rem;
-}
-
-.custom-card .additional .stats div.value.infinity {
-  font-size: 2.5rem;
-}
-
-.custom-card .general {
-  width: 300px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  box-sizing: border-box;
-  padding: 1rem;
-  padding-top: 0;
-}
-
-.custom-card .general .more {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 0.9em;
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 1rem;
+    font-size: 16px;
+    margin-block: 1rem;
+    color: #fff;
+    border: none;
+    border: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
 }
 
 #prof-img {
   width: 100px;
   height: 100px;
-  border-radius: 9999px;
+  border-radius: 50%;
 }
 
 img {
@@ -189,7 +61,13 @@ img {
   margin-bottom: 0.5rem;
 }
 
-#img-profile-card{
+#img-profile-card {
   width: 30px;
+  aspect-ratio: 1/1;
+}
+
+.img-navbar {
+  width: 80px;
+  border-radius: 50%;
   aspect-ratio: 1/1;
 }

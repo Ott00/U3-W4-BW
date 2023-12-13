@@ -8,7 +8,8 @@
   padding: 1rem;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  max-width: 600px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 .pointer {
@@ -18,10 +19,7 @@
 .bg-postshare {
   background-color: #303033;
 }
-.card {
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-}
+
 #card-user {
   #img-card-profile {
     width: 30px;

@@ -1,60 +1,47 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-xxl-4">
-      <h3 class="text-center my-4 text-light">Profilo</h3>
-      <div class="d-flex justify-content-center">
-        <div class="custom-card">
-          <div class="additional">
-            <div class="user-custom-card">
-              <div id="prof-img" class="mx-auto mt-5 overflow-hidden">
-                <img src="{{ userImageProf }}" alt="" />
+  <div class="row my-4">
+    <div class="col-12 col-xxl-4 position-sticky custom-top z-3 fixed-height">
+      <div class="custom-nav px-3 rounded-3 w-100">
+        <div class="d-flex align-items-center gap-3">
+          <div class="p-3 my-3">
+            <img
+              src="{{ userImageProf }}"
+              alt="profile avatar"
+              class="img-navbar"
+            />
+          </div>
+          <div class="d-flex flex-column text-white py-2 flex-grow-1">
+            <h3 class="my-3">{{ userName }} {{ userSurname }}</h3>
+            <div
+              class="d-flex flex-column justify-content-between row-gap-3 pe-3 pb-3"
+            >
+              <div>
+                <h6 class="fw-bold m-0">Email</h6>
+                <p class="m-0">{{ userEmail }}</p>
               </div>
-              <div class="points center">team leader</div>
-            </div>
-            <div class="more-info">
-              <h3 id="margin-mine">{{ userName }} {{ userSurname }}</h3>
-              <div
-                class="d-flex flex-column justify-content-around text-white p-3 pt-0"
-              >
-                <div class="mb-3">
-                  <div class="fw-bold">CITY</div>
-                  <div>{{ userCity }}</div>
+              <div class="d-flex justify-content-between">
+                <div class="d-none d-xxl-block">
+                  <h6 class="fw-bold m-0">Città</h6>
+                  <p class="m-0">{{ userCity }}</p>
                 </div>
-                <div>
-                  <div class="fw-bold">PHONE</div>
-                  <div>{{ userPhone }}</div>
+                <div class="d-none d-xxl-block">
+                  <h6 class="fw-bold m-0">Phone</h6>
+                  <p class="m-0">{{ userPhone }}</p>
                 </div>
               </div>
-              <div class="stats">
+              <div class="d-flex justify-content-between d-none d-xxl-flex">
                 <div>
-                  <div class="title">ID</div>
-                  <i class="fa fa-trophy"></i>
+                  <h6 class="fw-bold m-0">User</h6>
                   <div class="value">{{ userId }}</div>
                 </div>
                 <div>
-                  <div class="title">POST</div>
-                  <i class="fa fa-gamepad"></i>
-                  <div class="value">N POST</div>
+                  <h6 class="fw-bold m-0">Posts</h6>
+                  <div class="value">#X</div>
                 </div>
-
                 <div>
-                  <div class="title">Coffee</div>
-                  <i class="fa fa-coffee"></i>
+                  <h6 class="fw-bold m-0">Coffee</h6>
                   <div class="value infinity">∞</div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="general">
-            <h3>{{ userName }} {{ userSurname }}</h3>
-            <div class="d-flex flex-column justify-content-around">
-              <div class="mb-3">
-                <div class="fw-bold">USERNAME</div>
-                <div>{{ userUsername }}</div>
-              </div>
-              <div>
-                <div class="fw-bold">EMAIL</div>
-                <div>{{ userEmail }}</div>
               </div>
             </div>
           </div>
@@ -62,25 +49,77 @@
       </div>
     </div>
 
+    <!-- <div class="col-12 col-xxl-4">
+      <div class="position-sticky custom-top">
+        <h3 class="my-4"></h3>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="custom-nav px-3 rounded-3 w-100">
+            <div class="d-flex align-items-start gap-3">
+              <div class="p-3 my-3">
+                <img
+                  src="{{ userImageProf }}"
+                  alt="profile avatar"
+                  class="img-navbar"
+                />
+              </div>
+              <div class="d-flex flex-column text-white py-2 flex-grow-1">
+                <h3 class="my-3">{{ userName }} {{ userSurname }}</h3>
+                <div
+                  class="d-flex flex-column justify-content-between row-gap-3 pe-3 pb-3"
+                >
+                  <div>
+                    <h6 class="fw-bold m-0">Email</h6>
+                    <p class="m-0">{{ userEmail }}</p>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h6 class="fw-bold m-0">Città</h6>
+                      <p class="m-0">{{ userCity }}</p>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold m-0">Phone</h6>
+                      <p class="m-0">{{ userPhone }}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h6 class="fw-bold m-0">User</h6>
+                      <div class="value">{{ userId }}</div>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold m-0">Posts</h6>
+                      <div class="value">#X</div>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold m-0">Coffee</h6>
+                      <div class="value infinity">∞</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <div class="col-12 col-xxl-8">
-      <h3 class="text-center my-4 text-light">Post</h3>
-      <div class="row">
+      <div class="row mt-5 mt-xxl-0">
         <ng-container *ngFor="let post of postsProf; let i = index">
-          <div
-            *ngIf="userId === post.userId"
-            class="col-12 col-sm-6 col-md-4 col-xxl-4 mb-4 px-3"
-          >
-            <div class="card pointer h-100 mb-2">
+          <div *ngIf="userId === post.userId" class="col-12 col-lg-6 mb-4 px-3">
+            <div class="card pointer h-100 mb-2 text-white">
               <div class="card-body">
                 <div
                   class="d-flex justify-content-between align-items-baseline"
                 >
                   <div class="d-flex align-items-baseline">
-                    <!-- <i class="bi bi-person-circle"></i> -->
-                    <div id="img-profile-card" class="rounded-circle overflow-hidden">
-                    <img src={{userImageProf}}>
+                    <div
+                      id="img-profile-card"
+                      class="rounded-circle overflow-hidden"
+                    >
+                      <img src="{{ userImageProf }}" />
                     </div>
-                    <p class="ms-2 fw-bold">{{userUsername}}</p>
+                    <p class="ms-2 fw-bold">{{ userUsername }}</p>
                   </div>
                   <button
                     class="btn border-0 p-0"
@@ -95,7 +134,7 @@
                 <p class="card-text">
                   {{ post.body }}
                 </p>
-                <div class="position-absolute bottom-0 end-0 m-3 z-1">
+                <div class="position-absolute bottom-0 end-0 m-3 p-3 z-1">
                   <a
                     class="btn border-0 p-0"
                     data-bs-toggle="collapse"
@@ -104,17 +143,17 @@
                     aria-expanded="false"
                     (click)="addValue(form, post.id, $event)"
                   >
-                    <i class="bi bi-pencil-square fs-5 text-warning"></i>
+                    <i class="bi bi-pencil-square fs-5 text-info"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="collapse px-3 mb-4" id="{{ post.id }}">
-            <div class="card card-body card-focus">
+            <div class="card card-body card-focus text-white">
               <form #form="ngForm" (ngSubmit)="editPost(form, post.id)">
                 <div class="form-group">
-                  <label for="title">Titolo</label>
+                  <label for="title" class="fw-bold">Titolo</label>
                   <input
                     type="text"
                     id="title"
@@ -125,7 +164,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="body">Contenuto</label>
+                  <label for="body" class="fw-bold">Contenuto</label>
                   <textarea
                     type="text"
                     id="body"
@@ -137,13 +176,15 @@
                     rows="5"
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  class="btn btn-outline-dark mt-2"
-                  [disabled]="form.invalid"
-                >
-                  Salva
-                </button>
+                <div class="d-flex justify-content-end">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-info px-3 my-2"
+                    [disabled]="form.invalid"
+                  >
+                    Salva
+                  </button>
+                </div>
               </form>
             </div>
           </div>
