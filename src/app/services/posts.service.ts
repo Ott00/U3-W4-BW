@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../models/post';
+import { User } from '../models/user';
 import { Comment } from '../models/comment';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -11,11 +12,16 @@ import { Observable } from 'rxjs';
 export class PostsService {
   postApi: string = environment.postApi;
   commentApi: string = environment.commentApi;
+  userApi: string = environment.userApi;
 
   constructor(private http: HttpClient) {}
 
   getPosts() {
     return this.http.get<Post[]>(this.postApi);
+  }
+
+  getUsers(){
+    return this.http.get<User[]>(this.userApi)
   }
 
   removePost(postId: number) {

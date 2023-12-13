@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:4201/',
   postApi: 'http://localhost:4201/posts',
+  userApi: 'http://localhost:4201/users',
   commentApi: 'http://localhost:4201/comments'
 };
 
