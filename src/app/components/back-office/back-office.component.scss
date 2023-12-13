@@ -1,3 +1,51 @@
-.row{
-    width: 600px;
+:host {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.form-box .user-box {
+  position: relative;
+}
+
+.form-box .user-box input,
+.form-box .user-box textarea {
+  width: 100%;
+  padding: 10px 1rem;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.form-box .user-box label {
+  transform: translateX(1rem) translateY(-1rem);
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  height: 2.3rem;
+}
+
+.form-box label:first-child {
+  transform: translateX(1rem) translateY(1rem);
+}
+
+.form-box .user-box input:focus ~ label,
+.form-box .user-box input:not(:placeholder-shown) ~ label {
+  transform: translateX(1rem) translateY(1rem);
+  color: #2dc9f9;
+  font-size: 12px;
 }
