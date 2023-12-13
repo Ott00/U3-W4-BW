@@ -37,3 +37,15 @@
 // #2dc9f9 azzurro
 // #1e1e21 grigio scuro
 // #DCDCDC grigio chiaro
+div {
+  #user-prof {
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
