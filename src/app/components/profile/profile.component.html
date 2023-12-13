@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 col-xxl-4">
-      <h3 class="text-center my-4">Profilo</h3>
+      <h3 class="text-center my-4 text-light">Profilo</h3>
       <div class="d-flex justify-content-center">
         <div class="custom-card">
           <div class="additional">
@@ -63,7 +63,7 @@
     </div>
 
     <div class="col-12 col-xxl-8">
-      <h3 class="text-center my-4">Post</h3>
+      <h3 class="text-center my-4 text-light">Post</h3>
       <div class="row">
         <ng-container *ngFor="let post of postsProf; let i = index">
           <div
@@ -150,8 +150,12 @@
           <ng-container>
             <ul class="list-group">
               <li class="list-group-item" *ngFor="let comment of commentPost">
-                <p><strong>{{ comment.name }}</strong> - {{ comment.body }}</p>
-                <p class="text-end fw-bold text-lowercase"><small>{{comment.email}}</small></p>
+                <p>
+                  <strong>{{ comment.name }}</strong> - {{ comment.body }}
+                </p>
+                <p class="text-end fw-bold text-lowercase">
+                  <small>{{ comment.email }}</small>
+                </p>
               </li>
             </ul>
           </ng-container>

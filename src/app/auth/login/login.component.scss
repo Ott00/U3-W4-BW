@@ -1,4 +1,45 @@
-.row{
-    width: 600px;
-    height: 300px;
+:host {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  transform: translateX(1rem) translateY(-5rem);
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  height: 2.3rem;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:not(:placeholder-shown) ~ label {
+  transform: translateX(1rem) translateY(-6rem);
+  color: #2dc9f9;
+  font-size: 12px;
 }

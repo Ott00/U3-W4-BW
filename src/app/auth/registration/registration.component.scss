@@ -1,4 +1,76 @@
-.row{
-    width: 600px;
-    height: 700px;
+:host {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.register-box {
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.register-box .user-box {
+  position: relative;
+}
+
+.register-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.register-box .user-box label {
+  transform: translateX(1rem) translateY(-5rem);
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  height: 2.3rem;
+}
+
+.register-box .user-box input:focus ~ div label,
+.register-box .user-box input:not(:placeholder-shown) ~ div label {
+  transform: translateX(1rem) translateY(-6rem);
+  color: #2dc9f9;
+  font-size: 12px;
+}
+
+.register-box .user-box span {
+  left: 1rem;
+  top: 3rem;
+  color: #2dc9f9;
+  font-size: 12px;
+}
+
+.register-box .user-box select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+.register-box .user-box select option {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color: #1e1e21;
+  color: white;
 }

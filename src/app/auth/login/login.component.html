@@ -1,18 +1,47 @@
-<div class="container mt-3 d-flex flex-column align-items-center justify-content-center">
-    <h1 class="display-5 text-center">Login</h1>
-    <div class="row justify-content-center align-items-center border border-dark rounded mt-3">
-        <div class="col-6">
-            <form #form="ngForm" (ngSubmit)="submit(form)">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required class="form-control" ngModel>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required class="form-control" ngModel>
-                </div>
-                <button type="submit" class="btn btn-outline-dark mt-2 " [disabled]="form.invalid">Login</button>
-            </form>
-        </div>
+<div
+  class="container mt-3 d-flex flex-column align-items-center justify-content-center text-light"
+>
+  <div class="login-box">
+    <h1 class="text-center fw-bold fs-2">Login</h1>
+
+    <div class="row justify-content-center align-items-center mt-5 px-1">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <form #form="ngForm" (ngSubmit)="submit(form)">
+          <div class="form-group user-box">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder=" "
+              ngModel
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group user-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder=" "
+              ngModel
+            />
+            <label for="password">Password</label>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-outline-info px-5 mt-4"
+              [disabled]="form.invalid"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-1"></div>
     </div>
+  </div>
 </div>
