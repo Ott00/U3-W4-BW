@@ -37,30 +37,35 @@
   </div>
 </div>
 <ng-template #admin>
-  <div class="text-light">
+  <div class="col-12 text-light">
     <h1 class="my-5 ms-3">Segnalazioni</h1>
-    <div class="card admin-card m-3" *ngFor="let email of emails">
-      <h5 class="card-header border-bottom border-1">
-        Inviata da: {{ email.userEmail }}
-      </h5>
+    <div *ngFor="let email of emails">
+      <div class="card admin-card m-3" *ngIf="!email.completed">
+        <h5 class="card-header border-bottom border-1">
+          Inviata da: {{ email.userEmail }}
+        </h5>
 
-      <div class="card-body">
-        <h5 class="card-title">{{ email.oggetto }}</h5>
-        <p class="card-text">
-          {{ email.corpo }}
-        </p>
+        <div class="card-body">
+          <h5 class="card-title">{{ email.oggetto }}</h5>
+          <p class="card-text">
+            {{ email.corpo }}
+          </p>
 
-        <a
-          data-bs-toggle="collapse"
-          class="btn btn-outline-info px-3"
-          href="#{{ email.id }}"
-        >
-          Rispondi
-        </a>
-
+          <a
+            data-bs-toggle="collapse"
+            class="btn btn-outline-info px-3"
+            href="#{{ email.id }}"
+          >
+            Rispondi
+          </a>
+        </div>
         <div class="collapse px-3 mb-4" id="{{ email.id }}">
           <div class="card card-body card-focus text-white">
-            <form #form="ngForm" (ngSubmit)="sendAnswer(form, email.id)">
+            <form
+              #form="ngForm"
+              (ngSubmit)="sendAnswer(form, email.id)"
+              (ngSubmit)="changeStatus(email, email.id)"
+            >
               <div class="form-group">
                 <label for="title" class="fw-bold">Titolo</label>
                 <input

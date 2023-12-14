@@ -15,6 +15,7 @@ export class AssistenzaComponent implements OnInit {
     corpo: '',
     userId: 0,
     userEmail: '',
+    completed: false,
   };
 
   newAnswer: Faq = {
@@ -23,13 +24,13 @@ export class AssistenzaComponent implements OnInit {
     userId: 0,
     userEmail: '',
     emailId: 0,
+    completed: false,
   };
 
   userId!: number;
   userEmail!: string;
 
   emails: Faq[] = [];
-  emailsDone: Faq[] = [];
 
   constructor(private postSrv: PostsService) {}
   ngOnInit(): void {
@@ -42,7 +43,7 @@ export class AssistenzaComponent implements OnInit {
       console.log(this.userEmail);
     }
     this.getFaqs();
-    this.getEmailsDone();
+    console.log(this.emails);
   }
 
   sendEmail(form: NgForm) {
@@ -50,6 +51,7 @@ export class AssistenzaComponent implements OnInit {
     this.newEmail.userEmail = this.userEmail;
     this.newEmail.corpo = form.value.corpo;
     this.newEmail.oggetto = form.value.oggetto;
+    this.newEmail.completed = false;
     console.log(this.newEmail);
 
     this.postSrv.sendEmail(this.newEmail).subscribe(
@@ -71,10 +73,6 @@ export class AssistenzaComponent implements OnInit {
       this.emails = emails;
       console.log(this.emails);
     });
-  }
-
-  getEmailsDone() {
-    return this.emailsDone;
   }
 
   // removeEmail(emailId: any) {
@@ -109,5 +107,13 @@ export class AssistenzaComponent implements OnInit {
       }
     );
     console.log(form.value);
+  }
+
+  changeStatus(email: Email, emailId: any) {
+    this.postSrv.changeCompl(email, emailId).subscribe(() => {
+      email.completed = true;
+    });
+
+    this.getFaqs();
   }
 }

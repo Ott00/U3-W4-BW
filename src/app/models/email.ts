@@ -4,4 +4,5 @@ export interface Email {
   corpo: string;
   userId: number;
   userEmail: string;
+  completed: boolean;
 }

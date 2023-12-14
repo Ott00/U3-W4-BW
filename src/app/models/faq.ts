@@ -5,4 +5,5 @@ export interface Faq {
   userEmail: string;
   id?: number;
   emailId: number;
+  completed: boolean;
 }

@@ -62,7 +62,11 @@ export class PostsService {
     return this.http.delete(`${this.emailApi}/${emailId}`);
   }
 
-  sendAnswer(email: Email) {
+  sendAnswer(email: Faq) {
     return this.http.post<Email>(`${this.risposteApi}`, email);
+  }
+
+  changeCompl(email: Partial<Faq>, emailId: number) {
+    return this.http.patch<Faq>(`${this.postApi}/${emailId}`, email);
   }
 }
