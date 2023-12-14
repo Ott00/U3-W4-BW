@@ -45,34 +45,19 @@ export class AssistenzaComponent implements OnInit {
     this.newEmail.oggetto = form.value.oggetto;
     console.log(this.newEmail);
 
-    this.postSrv.sendEmail(this.newEmail).subscribe(
-      (response) => {
-        if (this.newEmail.corpo && this.newEmail.oggetto) {
-          this.alertSrv.toastNotificationSuccess(
-            'Feedback inviato correttamente!'
-          );
-          console.log('Email inviata con successo', response);
-          form.resetForm();
-        } else {
-          if (!this.newEmail.corpo)
-            this.alertSrv.toastNotificationError(
-              'Non è presente il corpo della segnalazione'
-            );
-          if (!this.newEmail.oggetto) {
-            this.alertSrv.toastNotificationError(
-              "Non è presente l'oggetto della segnalazione"
-            );
-          }
-        }
-      },
-      (error) => {
-        this.alertSrv.toastNotificationError(
-          "Errore durante l'invio del feedback!"
+    if (this.newEmail.corpo && this.newEmail.oggetto) {
+      this.postSrv.sendEmail(this.newEmail).subscribe((response) => {
+        this.alertSrv.toastNotificationSuccess(
+          'Feedback inviato correttamente!'
         );
-        console.error("Errore nell'invio dell'email:", error);
-      }
-    );
-    console.log(form.value);
+        console.log('Email inviata con successo', response);
+        form.resetForm();
+      });
+    } else {
+      this.alertSrv.toastNotificationError(
+        "Errore nell'invio della segnalazione"
+      );
+    }
   }
 
   getFaqs() {
