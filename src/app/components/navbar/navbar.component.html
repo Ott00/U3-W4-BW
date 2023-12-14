@@ -78,6 +78,8 @@
                 <span class="title-nav"> Registrazione</span>
               </a>
             </li>
+          </div>
+          <div class="align-self-start">
             <li class="nav-item" *ngIf="user">
               <a
                 class="nav-link"
@@ -85,13 +87,11 @@
                 routerLinkActive="active"
               >
                 <i class="bi bi-question-circle"></i>
-                <span class="title-nav"> Assistenza</span>
+                <span class="title-nav"> Segnalazioni</span>
               </a>
             </li>
-          </div>
-          <div class="align-self-start">
             <li class="nav-item" *ngIf="user">
-              <button class="btn text-dark" (click)="logout()">
+              <button class="btn text-dark m-0 p-2" (click)="logout()">
                 <i
                   class="bi bi-box-arrow-left bg-info p-3 rounded-2 d-flex align-self-center fs-5"
                 ></i>

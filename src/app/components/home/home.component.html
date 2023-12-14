@@ -50,21 +50,23 @@
     >
       <p class="text-white fw-bold px-2">Utenti Suggeriti</p>
       <div class="mb-3 px-3" *ngFor="let user of users; let i = index">
-        <div
-          class="row px-3 d-flex align-items-center rounded-2 p-2 card-user pointer gap-3"
-          *ngIf="i < 6"
-          [routerLink]="['/profile/' + user.id]"
-        >
-          <div class="d-none d-xxl-block col-xl-2">
-            <div id="img-card-profile-lat">
-              <img src="{{ user.imageProf }}" alt="" />
+        <div *ngIf="user.id != 1">
+          <div
+            class="row px-3 d-flex align-items-center rounded-2 p-2 card-user pointer gap-3"
+            *ngIf="i < 6"
+            [routerLink]="['/profile/' + user.id]"
+          >
+            <div class="d-none d-xxl-block col-xl-2">
+              <div id="img-card-profile-lat">
+                <img src="{{ user.imageProf }}" alt="" />
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-xxl-9 text-white">
-            <h6 class="m-0 text-capitalize">
-              {{ user.name }} {{ user.surname }}
-            </h6>
-            <p class="m-0 text-truncate">{{ user.email }}</p>
+            <div class="col-12 col-xxl-9 text-white">
+              <h6 class="m-0 text-capitalize">
+                {{ user.name }} {{ user.surname }}
+              </h6>
+              <p class="m-0 text-truncate">{{ user.email }}</p>
+            </div>
           </div>
         </div>
       </div>
