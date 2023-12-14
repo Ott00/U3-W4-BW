@@ -70,6 +70,10 @@ export class AssistenzaComponent implements OnInit {
     console.log(form.value);
   }
 
+  getEmailById(emailId: number): Email | undefined {
+    return this.emails.find((email) => email.id === emailId);
+  }
+
   //ADMIN
 
   getFaqs() {
