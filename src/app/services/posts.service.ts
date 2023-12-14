@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { Comment } from '../models/comment';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Email } from '../models/email';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class PostsService {
   postApi: string = environment.postApi;
   commentApi: string = environment.commentApi;
   userApi: string = environment.userApi;
+  emailApi: string = environment.emailApi;
 
   constructor(private http: HttpClient) {}
 
@@ -20,8 +22,8 @@ export class PostsService {
     return this.http.get<Post[]>(this.postApi);
   }
 
-  getUsers(){
-    return this.http.get<User[]>(this.userApi)
+  getUsers() {
+    return this.http.get<User[]>(this.userApi);
   }
 
   removePost(postId: number) {
@@ -42,5 +44,10 @@ export class PostsService {
   }
   addComment(comment: Comment): Observable<Comment> {
     return this.http.post<Comment>(`${this.commentApi}`, comment);
+  }
+
+  sendEmail(email: Email) {
+    console.log(email);
+    return this.http.post<Email>(`${this.emailApi}`, email);
   }
 }

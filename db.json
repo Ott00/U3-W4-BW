@@ -68,11 +68,11 @@
     },
     {
       "email": "rosariosca12@icloud.com",
-      "password": "$2a$10$hiMZ/lCkUDZALzeElHI6sumYZShSu89BlylC2RNEMtWPZVuOQkimm",
+      "password": "$2a$10$xnlCk2BqnXPRechEl3915.cdUuTtw65IQJ187GnpwOpVmEPZIUKGS",
       "name": "Rosario",
       "surname": "Scilipoti",
-      "username": "ceddubeddu",
-      "imageProf": "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "username": "rosetto",
+      "imageProf": "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "city": "Aosta Valley",
       "phone": "3457698672",
       "id": 8
@@ -1985,6 +1985,16 @@
       "name": "RE",
       "email": "rosariosca12@icloud.com",
       "body": "E"
+    }
+  ],
+  "assistenza": [
+    {
+      "destinatario": "scasc",
+      "oggetto": "sono",
+      "corpo": "piero",
+      "userId": 7,
+      "userEmail": "samueless001@gmail.com",
+      "id": 1
     }
   ]
 }

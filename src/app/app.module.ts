@@ -14,11 +14,20 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BackOfficeComponent } from './components/back-office/back-office.component';
+import { AssistenzaComponent } from './components/assistenza/assistenza.component';
 
 const routes: Route[] = [
   {
-    path: '',
-    component: HomeComponent,
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -32,17 +41,14 @@ const routes: Route[] = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'details/:id',
-    component: DetailsComponent,
+    path: 'assistenza',
+    component: AssistenzaComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'registration',
-    component: RegistrationComponent,
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
@@ -60,6 +66,7 @@ const routes: Route[] = [
     DetailsComponent,
     ProfileComponent,
     BackOfficeComponent,
+    AssistenzaComponent,
   ],
   imports: [
     BrowserModule,
