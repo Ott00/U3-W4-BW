@@ -6,6 +6,7 @@ import { Comment } from '../models/comment';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Email } from '../models/email';
+import { Faq } from '../models/faq';
 
 @Injectable({
   providedIn: 'root',
@@ -46,8 +47,17 @@ export class PostsService {
     return this.http.post<Comment>(`${this.commentApi}`, comment);
   }
 
+  //PER ASSISTENZA
   sendEmail(email: Email) {
     console.log(email);
     return this.http.post<Email>(`${this.emailApi}`, email);
+  }
+
+  getAssistance() {
+    return this.http.get<Faq[]>(this.emailApi);
+  }
+
+  removeEmail(emailId: number) {
+    return this.http.delete(`${this.emailApi}/${emailId}`);
   }
 }

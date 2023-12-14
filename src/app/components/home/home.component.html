@@ -3,12 +3,19 @@
     <div class="col-12 col-xxl-9">
       <div class="row px-2">
         <ng-container *ngFor="let post of posts">
-          <div class="col-12 col-lg-6 gy-3">
-            <div
-              class="card pointer h-100 mb-2 text-white"
-              (click)="changePage(post.id)"
-            >
-              <div class="card-body">
+          <div class="col-12 col-xl-6 gy-3">
+            <div class="card pointer h-100 mb-2 text-white">
+              <div *ngIf="userId === 1" class="text-end">
+                <button
+                  class="btn border-0 p-0 z-3 position-absolute m-4 end-0 top-0"
+                  (click)="removePost(post.id)"
+                  id="delete-btn"
+                >
+                  <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
+                </button>
+              </div>
+
+              <div class="card-body" (click)="changePage(post.id)">
                 <div *ngFor="let user of users">
                   <div
                     class="d-flex align-items-baseline"
