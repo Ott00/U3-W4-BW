@@ -35,6 +35,10 @@ export class PostsService {
     return this.http.get<Comment[]>(this.commentApi);
   }
 
+  removeComment(commentId: number) {
+    return this.http.delete(`${this.commentApi}/${commentId}`);
+  }
+
   editPost(data: Partial<Post>, postId: number): Observable<Post> {
     console.log(data);
     return this.http.patch<Post>(`${this.postApi}/${postId}`, data);

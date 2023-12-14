@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Email } from 'src/app/models/email';
 import { NgForm } from '@angular/forms';
@@ -24,7 +24,7 @@ export class AssistenzaComponent implements OnInit {
 
   constructor(
     private postSrv: PostsService,
-    private alertSrv: PopupNotificationService
+    @Inject(PopupNotificationService) private alertSrv: PopupNotificationService
   ) {}
   ngOnInit(): void {
     const user = localStorage.getItem('user');

@@ -1,4 +1,4 @@
-import { Component, Directive, OnInit } from '@angular/core';
+import { Component, Directive, OnInit, Inject } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
 import { Comment } from 'src/app/models/comment';
@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
 import { from } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
+import { PopupNotificationService } from 'src/app/services/popup-notification.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-
   // ID UTENTE URL
   id!: number;
 
@@ -26,37 +26,41 @@ export class ProfileComponent implements OnInit {
   userCity: string | null = null;
   userUsername: string | null = null;
   userPhone: string | null = null;
-  nPost: number = 0
-  actUser!: User
+  nPost: number = 0;
+  actUser!: User;
 
   //PER POSTS
   postsProf: Post[] = [];
   postsPageId: Post[] = [];
   postEdit: Post[] = [];
-  comments: Comment[] = []
-  commentPost: Comment[] = []
-  users: User[] = []
-  user: User[] = []
-
+  comments: Comment[] = [];
+  commentPost: Comment[] = [];
+  users: User[] = [];
+  user: User[] = [];
 
   postFocus: boolean = false;
 
-  constructor(private postSrv: PostsService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private postSrv: PostsService,
+    private route: ActivatedRoute,
+    private router: Router,
+    @Inject(PopupNotificationService) private alertSrv: PopupNotificationService
+  ) {}
 
   ngOnInit(): void {
-    this.takeId()
+    this.takeId();
 
     if (this.id) {
       console.log(true);
-      this.getUser()
-    }else{
+      this.getUser();
+    } else {
       console.log(false);
       const userString = localStorage.getItem('user');
-  
+
       if (userString) {
         const user = JSON.parse(userString);
         this.actUser = user.user;
-  
+
         this.userId = this.actUser.id;
         this.userName = this.actUser.name;
         this.userSurname = this.actUser.surname;
@@ -66,28 +70,26 @@ export class ProfileComponent implements OnInit {
         this.userUsername = this.actUser.username;
         this.userPhone = this.actUser.phone;
       }
-      
     }
 
-
     this.getPosts();
-    this.getComments()
+    this.getComments();
   }
 
   getPosts() {
     this.postSrv.getPosts().subscribe((posts: Post[]) => {
       this.postsProf = posts;
 
-      if (this.user[0] == undefined) {   
+      if (this.user[0] == undefined) {
         this.postsPageId = this.postsProf.filter(
           (element: Post) => element.userId === this.actUser.id
         );
-        this.nPost = this.postsPageId.length
-      }else{
+        this.nPost = this.postsPageId.length;
+      } else {
         this.postsPageId = this.postsProf.filter(
           (element: Post) => element.userId === this.user[0].id
         );
-        this.nPost = this.postsPageId.length
+        this.nPost = this.postsPageId.length;
       }
 
       console.log(this.postsProf);
@@ -98,6 +100,7 @@ export class ProfileComponent implements OnInit {
 
   removePost(postId: number) {
     this.postSrv.removePost(postId).subscribe(() => {
+      this.alertSrv.toastNotificationSuccess('Post rimosso');
       console.log('Post rimosso!');
       this.getPosts();
     });
@@ -135,20 +138,30 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  getComments(){
-    this.postSrv.getComments().subscribe((comment: Comment[] )=> {
-      this.comments = comment
+  getComments() {
+    this.postSrv.getComments().subscribe((comment: Comment[]) => {
+      this.comments = comment;
       console.log(this.comments);
-      this.commentPost = (this.comments.filter((element: Comment) => element.email === this.userEmail))
+      this.commentPost = this.comments.filter(
+        (element: Comment) => element.email === this.userEmail
+      );
       console.log(this.commentPost);
-    })
+    });
   }
 
-  getUser(){
+  removeComment(commentId: any) {
+    this.postSrv.removeComment(commentId).subscribe(() => {
+      this.alertSrv.toastNotificationSuccess('Commento rimosso');
+      console.log('Commento rimosso!');
+      this.getComments();
+    });
+  }
+
+  getUser() {
     this.postSrv.getUsers().subscribe((user: User[]) => {
-      this.users = user
+      this.users = user;
       console.log(this.users);
-      this.user = this.users.filter((element: User) => element.id === this.id)
+      this.user = this.users.filter((element: User) => element.id === this.id);
       console.log(this.user);
 
       this.userId = this.user[0].id;
@@ -160,17 +173,17 @@ export class ProfileComponent implements OnInit {
       this.userUsername = this.user[0].username;
       this.userPhone = this.user[0].phone;
       const userString = localStorage.getItem('user');
-  
+
       if (userString) {
         const user = JSON.parse(userString);
         this.actUser = user.user;
       }
-    })
+    });
   }
 
-  detailsPost(postId: number){
+  detailsPost(postId: number) {
     const userString = localStorage.getItem('user');
-  
+
     if (userString) {
       const user = JSON.parse(userString);
       this.actUser = user.user;
@@ -180,14 +193,11 @@ export class ProfileComponent implements OnInit {
     if (this.user[0] != undefined) {
       this.router.navigate([`/details/${postId}`]);
     }
-    
   }
-
 
   takeId() {
     this.route.params.subscribe((parm) => {
       this.id = +parm['id'];
     });
   }
-
 }

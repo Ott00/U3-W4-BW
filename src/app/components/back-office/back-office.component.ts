@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { PostsService } from 'src/app/services/posts.service';
@@ -16,7 +17,7 @@ export class BackOfficeComponent implements OnInit {
     private postSrv: PostsService,
     private router: Router,
     private fb: FormBuilder,
-    private alertSrv: PopupNotificationService
+    @Inject(PopupNotificationService) private alertSrv: PopupNotificationService
   ) {}
 
   ngOnInit(): void {

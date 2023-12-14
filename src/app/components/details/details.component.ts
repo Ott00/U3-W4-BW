@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
@@ -26,7 +26,7 @@ export class DetailsComponent implements OnInit {
   constructor(
     private postSrv: PostsService,
     private route: ActivatedRoute,
-    private alertSrv: PopupNotificationService
+    @Inject(PopupNotificationService) private alertSrv: PopupNotificationService
   ) {}
 
   ngOnInit(): void {
