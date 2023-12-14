@@ -360,12 +360,6 @@
       "title": "ciao",
       "body": "Primo post",
       "id": 61
-    },
-    {
-      "userId": 2,
-      "title": "Test",
-      "body": "a",
-      "id": 62
     }
   ],
   "comments": [
