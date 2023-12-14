@@ -1,39 +1,32 @@
 <!-- assistenza.component.html -->
-<div class="text-light">
-  <h4>Supporto utenti:</h4>
-  <form #form="ngForm" (ngSubmit)="sendEmail(form)">
-    <div class="mb-3">
-      <label for="destinatario" class="form-label">Destinatario:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="destinatario"
-        name="destinatario"
-        ngModel
-        required
-      />
+<div class="container mt-3 d-flex flex-column align-items-center text-light">
+  <div class="row justify-content-center align-items-center">
+    <div class="text-light">
+      <form #form="ngForm" (ngSubmit)="sendEmail(form)" class="help-box">
+        <h1 class="fw-bold mb-4">Supporto utenti:</h1>
+        <div class="mb-3 user-box">
+          <label for="oggetto" class="form-label">Oggetto:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="oggetto"
+            name="oggetto"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-3 user-box">
+          <label for="corpo" class="form-label">Corpo:</label>
+          <textarea
+            class="form-control"
+            id="corpo"
+            name="corpo"
+            ngModel
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-info">Invia Email</button>
+      </form>
     </div>
-    <div class="mb-3">
-      <label for="oggetto" class="form-label">Oggetto:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="oggetto"
-        name="oggetto"
-        ngModel
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="corpo" class="form-label">Corpo:</label>
-      <textarea
-        class="form-control"
-        id="corpo"
-        name="corpo"
-        ngModel
-        required
-      ></textarea>
-    </div>
-    <button type="submit" class="btn btn-outline-info">Invia Email</button>
-  </form>
+  </div>
 </div>

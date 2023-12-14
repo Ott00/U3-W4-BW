@@ -10,7 +10,6 @@ import { NgForm } from '@angular/forms';
 })
 export class AssistenzaComponent implements OnInit {
   newEmail: Email = {
-    destinatario: '',
     oggetto: '',
     corpo: '',
     userId: 0,
@@ -35,7 +34,6 @@ export class AssistenzaComponent implements OnInit {
     this.newEmail.userId = this.userId;
     this.newEmail.userEmail = this.userEmail;
     this.newEmail.corpo = form.value.corpo;
-    this.newEmail.destinatario = form.value.destinatario;
     this.newEmail.oggetto = form.value.oggetto;
     console.log(this.newEmail);
 
