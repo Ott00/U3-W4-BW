@@ -98,12 +98,6 @@
     },
     {
       "userId": 3,
-      "id": 25,
-      "title": "rem alias distinctio quo quis",
-      "body": "ullam consequatur ut\nomnis quis sit vel consequuntur\nipsa eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio"
-    },
-    {
-      "userId": 3,
       "id": 27,
       "title": "quasi id et eos tenetur aut quo autem",
       "body": "eum sed dolores ipsam sint possimus debitis occaecati\ndebitis qui qui et\nut placeat enim earum aut odit facilis\nconsequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
@@ -342,41 +336,6 @@
       "name": "harum error sit",
       "email": "Joshua.Spinka@toby.io",
       "body": "iusto sint recusandae placeat atque perferendis sit corporis molestiae\nrem dolor eius id delectus et qui\nsed dolorem reiciendis error ullam corporis delectus\nexplicabo mollitia odit laborum sed itaque deserunt rem dolorem"
-    },
-    {
-      "postId": 25,
-      "id": 121,
-      "name": "deleniti quo corporis ullam magni praesentium molestiae",
-      "email": "Annabelle@cole.com",
-      "body": "soluta mollitia impedit cumque nostrum tempore aut placeat repellat\nenim adipisci dolores aut ut ratione laboriosam necessitatibus vel\net blanditiis est iste sapiente qui atque repellendus alias\nearum consequuntur quia quasi quia"
-    },
-    {
-      "postId": 25,
-      "id": 122,
-      "name": "nihil tempora et reiciendis modi veniam",
-      "email": "Kacey@jamal.info",
-      "body": "doloribus veritatis a et quis corrupti incidunt est\nharum maiores impedit et beatae qui velit et aut\nporro sed dignissimos deserunt deleniti\net eveniet voluptas ipsa pariatur rem ducimus"
-    },
-    {
-      "postId": 25,
-      "id": 123,
-      "name": "ad eos explicabo odio velit",
-      "email": "Mina@mallie.name",
-      "body": "nostrum perspiciatis doloribus\nexplicabo soluta id libero illo iste et\nab expedita error aliquam eum sint ipsum\nmodi possimus et"
-    },
-    {
-      "postId": 25,
-      "id": 124,
-      "name": "nostrum suscipit aut consequatur magnam sunt fuga nihil",
-      "email": "Hudson.Blick@ruben.biz",
-      "body": "ut ut eius qui explicabo quis\niste autem nulla beatae tenetur enim\nassumenda explicabo consequatur harum exercitationem\nvelit itaque consectetur et possimus"
-    },
-    {
-      "postId": 25,
-      "id": 125,
-      "name": "porro et voluptate et reprehenderit",
-      "email": "Domenic.Durgan@joaquin.name",
-      "body": "aut voluptas dolore autem\nreprehenderit expedita et nihil pariatur ea animi quo ullam\na ea officiis corporis\neius voluptatum cum mollitia dolore quaerat accusamus"
     },
     {
       "postId": 27,
@@ -1541,62 +1500,6 @@
       "userId": 6,
       "userEmail": "ale@ale.com",
       "id": 3
-    },
-    {
-      "oggetto": "Aumento ad ale",
-      "corpo": "Vi prego date un aumento al grafico che ha fatto la sezione assistenza dell'admin !!!",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 4
-    },
-    {
-      "oggetto": "Cheater",
-      "corpo": "Sono convinto che Otman sia un cheater",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 5
-    },
-    {
-      "oggetto": "Cantante",
-      "corpo": "Fate in modo di far cantare gigi d'alessio a Rosario",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 6
-    },
-    {
-      "oggetto": "Admin",
-      "corpo": "Si vede che la pagina admin è fatta proprio bene , nulla da dire",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 7
-    },
-    {
-      "oggetto": "cia caaa",
-      "corpo": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam esse ullam quod eum voluptates perspiciatis quas repellat, ducimus explicabo similique, amet reiciendis dolore deleniti ad pariatur? Aspernatur error sequi eius?",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 8
-    },
-    {
-      "oggetto": "aaaaaaaaaa",
-      "corpo": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam esse ullam quod eum voluptates perspiciatis quas repellat, ducimus explicabo similique, amet reiciendis dolore deleniti ad pariatur? Aspernatur error sequi eius?",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 9
-    },
-    {
-      "oggetto": "bbbbbbbbb",
-      "corpo": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam esse ullam quod eum voluptates perspiciatis quas repellat, ducimus explicabo similique, amet reiciendis dolore deleniti ad pariatur? Aspernatur error sequi eius?",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 10
-    },
-    {
-      "oggetto": "qqqqqqqqq",
-      "corpo": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam esse ullam quod eum voluptates perspiciatis quas repellat, ducimus explicabo similique, amet reiciendis dolore deleniti ad pariatur? Aspernatur error sequi eius?",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "id": 11
     }
   ]
 }
