@@ -60,3 +60,29 @@
 .head-b {
   border-bottom: 5px white;
 }
+
+.card {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.card-focus {
+  border-right: 2px solid #2dc9f9;
+  border-bottom: 2px solid #2dc9f9;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 1rem;
+    font-size: 16px;
+    margin-block: 1rem;
+    color: #fff;
+    border: none;
+    border: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+}

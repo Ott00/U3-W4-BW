@@ -16,10 +16,20 @@ export class AssistenzaComponent implements OnInit {
     userId: 0,
     userEmail: '',
   };
+
+  newAnswer: Faq = {
+    oggetto: '',
+    corpo: '',
+    userId: 0,
+    userEmail: '',
+    emailId: 0,
+  };
+
   userId!: number;
   userEmail!: string;
 
   emails: Faq[] = [];
+  emailsDone: Faq[] = [];
 
   constructor(private postSrv: PostsService) {}
   ngOnInit(): void {
@@ -32,6 +42,7 @@ export class AssistenzaComponent implements OnInit {
       console.log(this.userEmail);
     }
     this.getFaqs();
+    this.getEmailsDone();
   }
 
   sendEmail(form: NgForm) {
@@ -53,6 +64,8 @@ export class AssistenzaComponent implements OnInit {
     console.log(form.value);
   }
 
+  //ADMIN
+
   getFaqs() {
     this.postSrv.getAssistance().subscribe((emails: Faq[]) => {
       this.emails = emails;
@@ -60,10 +73,41 @@ export class AssistenzaComponent implements OnInit {
     });
   }
 
-  removeEmail(emailId: number) {
-    this.postSrv.removeEmail(emailId).subscribe(() => {
-      console.log('email rimossa!');
-      this.getFaqs();
-    });
+  getEmailsDone() {
+    return this.emailsDone;
+  }
+
+  // removeEmail(emailId: any) {
+  //   this.postSrv.removeEmail(emailId).subscribe(() => {
+  //     console.log('email rimossa!');
+  //     this.getFaqs();
+  //   });
+  // }
+  // removeEmail(email: Email) {
+  //   this.emailsDone.push(email);
+  // }
+
+  sendAnswer(form: NgForm, emailId: any) {
+    this.newAnswer.userId = this.userId;
+    this.newAnswer.userEmail = this.userEmail;
+    this.newAnswer.corpo = form.value.corpo;
+    this.newAnswer.oggetto = form.value.oggetto;
+    this.newAnswer.emailId = emailId;
+
+    console.log(emailId);
+    console.log(form);
+
+    console.log(this.newAnswer);
+
+    this.postSrv.sendAnswer(this.newAnswer).subscribe(
+      (response) => {
+        console.log('Risposta inviata con successo', response);
+        form.resetForm();
+      },
+      (error) => {
+        console.error("Errore nell'invio dell'email:", error);
+      }
+    );
+    console.log(form.value);
   }
 }

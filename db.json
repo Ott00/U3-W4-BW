@@ -1509,17 +1509,54 @@
   ],
   "assistenza": [
     {
-      "oggetto": "Errore nella visione dei post ",
-      "corpo": "Ciao, non riesco a vedere i post , probabilmente è colpa del team leader !!!\n\nLinceziateloooooo",
+      "oggetto": "11111111111111",
+      "corpo": "11111111111111",
+      "userId": 6,
+      "userEmail": "ale@ale.com",
+      "id": 1
+    },
+    {
+      "oggetto": "2222222222222222222",
+      "corpo": "222222222222222222222",
+      "userId": 6,
+      "userEmail": "ale@ale.com",
+      "id": 2
+    },
+    {
+      "oggetto": "333333333333333333",
+      "corpo": "3333333333333333333",
       "userId": 6,
       "userEmail": "ale@ale.com",
       "id": 3
+    }
+  ],
+  "risposte": [
+    {
+      "oggetto": "11111111111111",
+      "corpo": "va bene bosss",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "id": 1
     },
     {
-      "oggetto": "Test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
+      "corpo": "ciao otmain",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 1,
+      "id": 2
+    },
+    {
+      "corpo": "ciao 3",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 3,
+      "id": 3
+    },
+    {
+      "corpo": "aaaaaaaaaa",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 3,
       "id": 4
     }
   ]

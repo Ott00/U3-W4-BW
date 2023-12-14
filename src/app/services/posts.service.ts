@@ -16,6 +16,7 @@ export class PostsService {
   commentApi: string = environment.commentApi;
   userApi: string = environment.userApi;
   emailApi: string = environment.emailApi;
+  risposteApi: string = environment.risposteApi;
 
   constructor(private http: HttpClient) {}
 
@@ -59,5 +60,9 @@ export class PostsService {
 
   removeEmail(emailId: number) {
     return this.http.delete(`${this.emailApi}/${emailId}`);
+  }
+
+  sendAnswer(email: Email) {
+    return this.http.post<Email>(`${this.risposteApi}`, email);
   }
 }
