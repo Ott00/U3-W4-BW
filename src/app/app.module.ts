@@ -16,14 +16,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BackOfficeComponent } from './components/back-office/back-office.component';
 import { AssistenzaComponent } from './components/assistenza/assistenza.component';
 
-//popup
-import {
-  NgxAwesomePopupModule,
-  DialogConfigModule,
-  ConfirmBoxConfigModule,
-  ToastNotificationConfigModule,
-} from '@costlydeveloper/ngx-awesome-popup';
-
 const routes: Route[] = [
   {
     path: 'login',
@@ -87,18 +79,6 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgxAwesomePopupModule.forRoot({
-      colorList: {
-        customOne: '#2dc9f9',
-      },
-    }),
-    DialogConfigModule.forRoot(),
-    ConfirmBoxConfigModule.forRoot(),
-    ToastNotificationConfigModule.forRoot({
-      globalSettings: {
-        allowedNotificationsAtOnce: 2,
-      },
-    }),
   ],
   providers: [
     {

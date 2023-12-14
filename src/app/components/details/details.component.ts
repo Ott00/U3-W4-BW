@@ -5,7 +5,6 @@ import { User } from 'src/app/models/user';
 import { Comment } from 'src/app/models/comment';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { PopupNotificationService } from 'src/app/services/popup-notification.service';
 
 @Component({
   selector: 'app-details',
@@ -23,11 +22,7 @@ export class DetailsComponent implements OnInit {
   email!: string;
   newComment: Comment = { postId: 0, id: 0, name: '', email: '', body: '' };
 
-  constructor(
-    private postSrv: PostsService,
-    private route: ActivatedRoute,
-    private alertSrv: PopupNotificationService
-  ) {}
+  constructor(private postSrv: PostsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.takeId();
@@ -79,19 +74,14 @@ export class DetailsComponent implements OnInit {
   }
 
   addComment(form: NgForm) {
-    this.newComment.email = this.email;
     this.newComment.postId = this.id;
-    if (this.newComment.body && this.newComment.name) {
-      this.postSrv.addComment(this.newComment).subscribe((comment) => {
-        this.commentPost.push(comment);
-        this.newComment = form.value;
-        this.alertSrv.toastNotificationSuccess('Commento inserito');
-        this.getComments();
-        form.reset();
-      });
-    } else {
-      this.alertSrv.toastNotificationError('Nessun commento è stato inserito');
-    }
+    this.newComment.email = this.email;
+    this.postSrv.addComment(this.newComment).subscribe((comment) => {
+      this.commentPost.push(comment);
+      this.newComment = form.value;
+      this.getComments();
+      form.reset();
+    });
     console.log(this.newComment);
   }
 }
