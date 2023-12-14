@@ -45,6 +45,7 @@ export class DetailsComponent implements OnInit {
       this.commentPost = this.comments.filter(
         (element: Comment) => element.postId === this.id
       );
+      this.commentPost.reverse();
     });
   }
 
@@ -78,6 +79,8 @@ export class DetailsComponent implements OnInit {
     this.postSrv.addComment(this.newComment).subscribe((comment) => {
       this.commentPost.push(comment);
       this.newComment = form.value;
+      this.getComments();
+      form.reset();
     });
     console.log(this.newComment);
   }
