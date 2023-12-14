@@ -41,6 +41,7 @@
         <div
           class="row px-4 d-flex align-items-center rounded-2 p-2 card-user pointer"
           *ngIf="i < 6"
+          [routerLink]="['/profile/' + user.id]"
         >
           <div class="col-2">
             <div id="img-card-profile-lat">
