@@ -156,22 +156,12 @@
           <ng-container>
             <ul class="list-group p-0">
               <li
-                class="bg-card text-white p-3 list-unstyled border-1 border rounded-3 mb-3 position-relative"
+                class="bg-card text-white p-3 list-unstyled border-1 border rounded-3 mb-3"
                 *ngFor="let comment of commentPost"
               >
-                <div class="d-flex justify-content-between align-items-center">
-                  <p class="fw-bold text-capitalize m-0 ">
-                    {{ comment.name }}
-                  </p>
-                  <button
-                    class="btn border-0 p-0"
-                    (click)="removeComment(comment.id)"
-                    *ngIf="userId === actUser.id || actUser.id === 1"
-                  >
-                    <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
-                  </button>
-                </div>
-                <p class="m-0 mb-2">{{ comment.body }}</p>
+                <p>
+                  <strong>{{ comment.name }}</strong> - {{ comment.body }}
+                </p>
                 <p class="text-end fw-bold text-lowercase">
                   <small>{{ comment.email }}</small>
                 </p>

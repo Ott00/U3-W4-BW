@@ -103,13 +103,6 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  removeComment(commentId: any){
-    this.postSrv.removeComment(commentId).subscribe(() =>{
-      console.log('Commento rimosso!');
-      this.getComments()
-    })
-  }
-
   addValue(form: NgForm, postId: number, e: Event) {
     this.postEdit = this.postsProf.filter(
       (element: Post) => element.id === postId

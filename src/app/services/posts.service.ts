@@ -31,10 +31,6 @@ export class PostsService {
     return this.http.delete(`${this.postApi}/${postId}`);
   }
 
-  removeComment(commentId: number){
-    return this.http.delete(`${this.commentApi}/${commentId}`);
-  }
-
   getComments() {
     return this.http.get<Comment[]>(this.commentApi);
   }
