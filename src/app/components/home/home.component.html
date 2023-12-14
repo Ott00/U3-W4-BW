@@ -32,5 +32,12 @@
         </div>
       </div>
     </ng-container>
+    <div class="text-bg-light d-flex col-2" *ngFor="let user of users">
+      <div id="user-prof"><img src="{{ user.imageProf }}" alt="" /></div>
+      <div>
+        <h3>{{ user.name }} {{ user.surname }}</h3>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
   </div>
 </div>
