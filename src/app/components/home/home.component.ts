@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   posts: Post[] = [];
   users: User[] = [];
+  usersArr: User[] = [];
 
   constructor(private postSrv: PostsService, private router: Router) {}
 
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
     this.postSrv.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
       console.log(this.posts);
+      this.shufflePosts();
     });
   }
 
@@ -42,6 +44,9 @@ export class HomeComponent implements OnInit {
     this.postSrv.getUsers().subscribe((users: User[]) => {
       this.users = users;
       console.log(this.users);
+      this.usersArr = users;
+      this.usersArr.shift();
+      this.shuffleUser();
     });
   }
 
@@ -54,5 +59,15 @@ export class HomeComponent implements OnInit {
       console.log('Post rimosso!');
       this.getPosts();
     });
+  }
+
+  //SHUFFLE
+
+  shuffleUser() {
+    this.usersArr = this.usersArr.sort(() => Math.random() - 0.5);
+  }
+
+  shufflePosts() {
+    this.posts = this.posts.sort(() => Math.random() - 0.5);
   }
 }
