@@ -110,7 +110,8 @@ export class AssistenzaComponent implements OnInit {
   }
 
   changeStatus(email: Email, emailId: any) {
-    this.postSrv.changeCompl(email, emailId).subscribe(() => {
+    const partialFaq: Partial<Email> = { completed: true };
+    this.postSrv.changeCompl(partialFaq, emailId).subscribe(() => {
       email.completed = true;
     });
 

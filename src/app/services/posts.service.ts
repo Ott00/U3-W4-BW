@@ -66,7 +66,7 @@ export class PostsService {
     return this.http.post<Email>(`${this.risposteApi}`, email);
   }
 
-  changeCompl(email: Partial<Faq>, emailId: number) {
-    return this.http.patch<Faq>(`${this.postApi}/${emailId}`, email);
+  changeCompl(email: Partial<Email>, emailId: number): Observable<Email> {
+    return this.http.patch<Email>(`${this.emailApi}/${emailId}`, email);
   }
 }
