@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Email } from 'src/app/models/email';
 import { NgForm } from '@angular/forms';
+import { Faq } from 'src/app/models/faq';
 
 @Component({
   selector: 'app-assistenza',
@@ -18,6 +19,8 @@ export class AssistenzaComponent implements OnInit {
   userId!: number;
   userEmail!: string;
 
+  emails: Faq[] = [];
+
   constructor(private postSrv: PostsService) {}
   ngOnInit(): void {
     const user = localStorage.getItem('user');
@@ -28,6 +31,7 @@ export class AssistenzaComponent implements OnInit {
       console.log(this.userId);
       console.log(this.userEmail);
     }
+    this.getFaqs();
   }
 
   sendEmail(form: NgForm) {
@@ -47,5 +51,19 @@ export class AssistenzaComponent implements OnInit {
       }
     );
     console.log(form.value);
+  }
+
+  getFaqs() {
+    this.postSrv.getAssistance().subscribe((emails: Faq[]) => {
+      this.emails = emails;
+      console.log(this.emails);
+    });
+  }
+
+  removeEmail(emailId: number) {
+    this.postSrv.removeEmail(emailId).subscribe(() => {
+      console.log('email rimossa!');
+      this.getFaqs();
+    });
   }
 }
