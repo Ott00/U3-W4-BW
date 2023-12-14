@@ -35,7 +35,50 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-6">
+      <h1 class="text-light">I miei ticket</h1>
+      <div *ngFor="let email of emails">
+        <div class="card admin-card m-3" *ngIf="userId === email.userId">
+          <h5 class="card-header border-bottom border-1">
+            Inviata da: {{ email.userEmail }}
+          </h5>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ email.oggetto }}</h5>
+            <p class="card-text">
+              {{ email.corpo }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <h1 class="text-light">Risposte ai miei ticket</h1>
+      <div *ngFor="let answer of answers">
+        <ng-container *ngFor="let email of emails">
+          <div
+            class="card admin-card m-3"
+            *ngIf="answer.emailId === email.id && userId === email.userId"
+          >
+            <h5 class="card-header border-bottom border-1">
+              Inviata da: {{ answer.userEmail }}
+            </h5>
+
+            <div class="card-body">
+              <h5 class="card-title">{{ answer.oggetto }}</h5>
+              <p class="card-text">
+                {{ answer.corpo }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>
+
 <ng-template #admin>
   <div class="col-12 text-light">
     <h1 class="my-5 ms-3">Segnalazioni</h1>

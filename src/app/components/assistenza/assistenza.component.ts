@@ -31,6 +31,9 @@ export class AssistenzaComponent implements OnInit {
   userEmail!: string;
 
   emails: Faq[] = [];
+  answers: Faq[] = [];
+
+  emailId: any[] = [];
 
   constructor(private postSrv: PostsService) {}
   ngOnInit(): void {
@@ -44,6 +47,7 @@ export class AssistenzaComponent implements OnInit {
     }
     this.getFaqs();
     console.log(this.emails);
+    this.getAnswers();
   }
 
   sendEmail(form: NgForm) {
@@ -71,7 +75,16 @@ export class AssistenzaComponent implements OnInit {
   getFaqs() {
     this.postSrv.getAssistance().subscribe((emails: Faq[]) => {
       this.emails = emails;
+
       console.log(this.emails);
+    });
+  }
+
+  getAnswers() {
+    this.postSrv.getAnswers().subscribe((answers: Faq[]) => {
+      this.answers = answers;
+
+      console.log(this.answers);
     });
   }
 

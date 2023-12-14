@@ -87,6 +87,17 @@
       "city": "Aosta Valley",
       "phone": "3457698672",
       "id": 8
+    },
+    {
+      "email": "giova@fede.com",
+      "password": "$2a$10$Tz7H8BfBfnAiTcULjqMqHeSbjMQzf6x.YSrES1myDQzMGJxg/aQOm",
+      "name": "Feederico",
+      "surname": "Giovanotti",
+      "username": "fedeSiummm",
+      "imageProf": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Miami",
+      "phone": "35783863013",
+      "id": 9
     }
   ],
   "posts": [
@@ -1509,98 +1520,54 @@
   ],
   "assistenza": [
     {
-      "oggetto": "11111111111111",
-      "corpo": "11111111111111",
+      "oggetto": "ale ale ale ale ",
+      "corpo": "aleeeeeeeeeeeeeeeeeeeee",
       "userId": 6,
       "userEmail": "ale@ale.com",
       "completed": true,
       "id": 1
     },
     {
-      "oggetto": "2222222222222222222",
-      "corpo": "222222222222222222222",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "completed": false,
+      "oggetto": "otttt",
+      "corpo": "ottttt",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
       "id": 2
     },
     {
-      "oggetto": "333333333333333333",
-      "corpo": "3333333333333333333",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "oggetto": "daiiiiii",
-      "corpo": "caiooooooooooooooooooooooooo",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "oggetto": "ciao ho un problema",
-      "corpo": "non funziona il patch !!!",
-      "userId": 6,
-      "userEmail": "ale@ale.com",
+      "oggetto": "Antonio è troppo forte con il css",
+      "corpo": "Non posso vederlo senza occhiali da sole",
+      "userId": 9,
+      "userEmail": "giova@fede.com",
       "completed": true,
-      "id": 5
+      "id": 3
     }
   ],
   "risposte": [
     {
-      "oggetto": "11111111111111",
-      "corpo": "va bene bosss",
+      "corpo": "ciao ale",
       "userId": 1,
       "userEmail": "admin@gmail.com",
+      "emailId": 1,
+      "completed": false,
       "id": 1
     },
     {
-      "corpo": "ciao otmain",
+      "corpo": "ciao ale",
       "userId": 1,
       "userEmail": "admin@gmail.com",
-      "emailId": 1,
+      "emailId": 2,
+      "completed": false,
       "id": 2
     },
     {
-      "corpo": "ciao 3",
+      "corpo": "usa il buono socnoto ngai cahonwqvboacnhi c e comprali",
       "userId": 1,
       "userEmail": "admin@gmail.com",
       "emailId": 3,
+      "completed": false,
       "id": 3
-    },
-    {
-      "corpo": "aaaaaaaaaa",
-      "userId": 1,
-      "userEmail": "admin@gmail.com",
-      "emailId": 3,
-      "id": 4
-    },
-    {
-      "corpo": "ciao ciao ",
-      "userId": 1,
-      "userEmail": "admin@gmail.com",
-      "emailId": 1,
-      "completed": false,
-      "id": 5
-    },
-    {
-      "corpo": "Lo risolvo a breve !!!",
-      "userId": 1,
-      "userEmail": "admin@gmail.com",
-      "emailId": 5,
-      "completed": false,
-      "id": 6
-    },
-    {
-      "corpo": "Ciao risolviamo a breve !",
-      "userId": 1,
-      "userEmail": "admin@gmail.com",
-      "emailId": 1,
-      "completed": false,
-      "id": 7
     }
   ]
 }

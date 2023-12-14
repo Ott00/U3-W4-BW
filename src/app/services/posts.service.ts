@@ -58,6 +58,9 @@ export class PostsService {
     return this.http.get<Faq[]>(this.emailApi);
   }
 
+  getAnswers() {
+    return this.http.get<Faq[]>(this.risposteApi);
+  }
   removeEmail(emailId: number) {
     return this.http.delete(`${this.emailApi}/${emailId}`);
   }
