@@ -79,8 +79,11 @@
               </a>
             </li>
           </div>
-          <div class="align-self-start">
-            <li class="nav-item" *ngIf="user">
+          <div>
+            <li
+              class="nav-item d-flex justify-content-center justify-content-md-start"
+              *ngIf="user"
+            >
               <a
                 class="nav-link"
                 [routerLink]="['/assistenza']"
