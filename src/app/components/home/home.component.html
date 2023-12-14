@@ -1,42 +1,57 @@
 <div class="container-fluid mt-4">
   <div class="row px-3 d-flex justify-content-center">
-    <ng-container *ngFor="let post of posts">
-      <div class="col-10 col-lg-6 col-xxl-4 gy-3">
-        <div
-          class="card pointer h-100 mb-2 text-white"
-          (click)="changePage(post.id)"
-        >
-          <div class="card-body">
-            <div *ngFor="let user of users">
-              <div
-                class="d-flex align-items-baseline"
-                *ngIf="user.id === post.userId"
-                id="card-user"
-              >
-                <div id="img-card-profile">
-                  <img src="{{ user.imageProf }}" alt="" />
+    <div class="col-9">
+      <div class="row px-4">
+        <ng-container *ngFor="let post of posts">
+          <div class="col-12 col-xl-6 gy-3">
+            <div
+              class="card pointer h-100 mb-2 text-white"
+              (click)="changePage(post.id)"
+            >
+              <div class="card-body">
+                <div *ngFor="let user of users">
+                  <div
+                    class="d-flex align-items-baseline"
+                    *ngIf="user.id === post.userId"
+                    id="card-user"
+                  >
+                    <div id="img-card-profile">
+                      <img src="{{ user.imageProf }}" alt="" />
+                    </div>
+                    <p class="ms-2 fw-bold">{{ user.username }}</p>
+                  </div>
                 </div>
-                <p class="ms-2 fw-bold">{{ user.username }}</p>
+                <h5 class="card-title text-capitalize">{{ post.title }}</h5>
+                <p class="card-text">
+                  {{ post.body }}
+                </p>
+                <!-- <div class="position-absolute bottom-0 end-0 m-2">
+                  <button class="btn btn-info">
+                    <i class="bi bi-heart-fill"></i>
+                  </button>
+                </div> -->
               </div>
             </div>
-            <h5 class="card-title text-capitalize">{{ post.title }}</h5>
-            <p class="card-text">
-              {{ post.body }}
-            </p>
-            <!-- <div class="position-absolute bottom-0 end-0 m-2">
-              <button class="btn btn-info">
-                <i class="bi bi-heart-fill"></i>
-              </button>
-            </div> -->
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-3 col-users mt-3 px-4 pt-3 position-sticky custom-top">
+      <div class="mb-3" *ngFor="let user of users; let i = index">
+        <div
+          class="row px-4 d-flex align-items-center rounded-2 p-2 card-user pointer"
+          *ngIf="i < 6"
+        >
+          <div class="col-2">
+            <div id="img-card-profile-lat">
+              <img src="{{ user.imageProf }}" alt="" />
+            </div>
+          </div>
+          <div class="col-9 ps-4 text-white">
+            <h6 class="m-0">{{ user.name }} {{ user.surname }}</h6>
+            <p class="m-0">{{ user.email }}</p>
           </div>
         </div>
-      </div>
-    </ng-container>
-    <div class="text-bg-light d-flex col-2" *ngFor="let user of users">
-      <div id="user-prof"><img src="{{ user.imageProf }}" alt="" /></div>
-      <div>
-        <h3>{{ user.name }} {{ user.surname }}</h3>
-        <p>{{ user.email }}</p>
       </div>
     </div>
   </div>

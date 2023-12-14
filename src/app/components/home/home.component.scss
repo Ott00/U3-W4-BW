@@ -12,40 +12,57 @@
   border-bottom: 2px solid #ffffff;
 }
 
+.col-users {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  height: fit-content;
+}
+.custom-top {
+  top: 2.5rem;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.card-user {
+  border: 1px solid white;
+  opacity: 0.85;
+
+  &:hover {
+    opacity: 1;
+    border-color: #2dc9f9;
+  }
 }
 
 .bg-postshare {
   background-color: #303033;
 }
 
-#card-user {
-  #img-card-profile {
-    width: 30px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+#img-card-profile {
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+#img-card-profile-lat {
+  width: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 // #2dc9f9 azzurro
 // #1e1e21 grigio scuro
 // #DCDCDC grigio chiaro
-div {
-  #user-prof {
-    width: 100px;
-    height: 100px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-  }
-}
