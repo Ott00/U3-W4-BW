@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:4201/',
   postApi: 'http://localhost:4201/posts',
   userApi: 'http://localhost:4201/users',
-  commentApi: 'http://localhost:4201/comments'
+  commentApi: 'http://localhost:4201/comments',
+  emailApi: 'http://localhost:4201/assistenza',
 };
 
 /*

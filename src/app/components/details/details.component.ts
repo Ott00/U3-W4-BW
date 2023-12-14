@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
 import { Comment } from 'src/app/models/comment';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { PopupNotificationService } from 'src/app/services/popup-notification.service';
 
 @Component({
   selector: 'app-details',
@@ -22,7 +23,11 @@ export class DetailsComponent implements OnInit {
   email!: string;
   newComment: Comment = { postId: 0, id: 0, name: '', email: '', body: '' };
 
-  constructor(private postSrv: PostsService, private route: ActivatedRoute) {}
+  constructor(
+    private postSrv: PostsService,
+    private route: ActivatedRoute,
+    @Inject(PopupNotificationService) private alertSrv: PopupNotificationService
+  ) {}
 
   ngOnInit(): void {
     this.takeId();
@@ -45,6 +50,7 @@ export class DetailsComponent implements OnInit {
       this.commentPost = this.comments.filter(
         (element: Comment) => element.postId === this.id
       );
+      this.commentPost.reverse();
     });
   }
 
@@ -73,12 +79,19 @@ export class DetailsComponent implements OnInit {
   }
 
   addComment(form: NgForm) {
-    this.newComment.postId = this.id;
     this.newComment.email = this.email;
-    this.postSrv.addComment(this.newComment).subscribe((comment) => {
-      this.commentPost.push(comment);
-      this.newComment = form.value;
-    });
+    this.newComment.postId = this.id;
+    if (this.newComment.body && this.newComment.name) {
+      this.postSrv.addComment(this.newComment).subscribe((comment) => {
+        this.commentPost.push(comment);
+        this.newComment = form.value;
+        this.alertSrv.toastNotificationSuccess('Commento inserito');
+        this.getComments();
+        form.reset();
+      });
+    } else {
+      this.alertSrv.toastNotificationError('Nessun commento è stato inserito');
+    }
     console.log(this.newComment);
   }
 }

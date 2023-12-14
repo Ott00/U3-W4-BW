@@ -14,15 +14,37 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BackOfficeComponent } from './components/back-office/back-office.component';
+import { AssistenzaComponent } from './components/assistenza/assistenza.component';
+
+//popup
+import {
+  NgxAwesomePopupModule,
+  DialogConfigModule,
+  ConfirmBoxConfigModule,
+  ToastNotificationConfigModule,
+} from '@costlydeveloper/ngx-awesome-popup';
 
 const routes: Route[] = [
   {
-    path: '',
-    component: HomeComponent,
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
     canActivate: [AuthGuard],
   },
   {
     path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'profile/:id',
     component: ProfileComponent,
     canActivate: [AuthGuard],
   },
@@ -32,17 +54,14 @@ const routes: Route[] = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'details/:id',
-    component: DetailsComponent,
+    path: 'assistenza',
+    component: AssistenzaComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'registration',
-    component: RegistrationComponent,
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
@@ -60,6 +79,7 @@ const routes: Route[] = [
     DetailsComponent,
     ProfileComponent,
     BackOfficeComponent,
+    AssistenzaComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +87,18 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    NgxAwesomePopupModule.forRoot({
+      colorList: {
+        customOne: '#2dc9f9',
+      },
+    }),
+    DialogConfigModule.forRoot(),
+    ConfirmBoxConfigModule.forRoot(),
+    ToastNotificationConfigModule.forRoot({
+      globalSettings: {
+        allowedNotificationsAtOnce: 2,
+      },
+    }),
   ],
   providers: [
     {

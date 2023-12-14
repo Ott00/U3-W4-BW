@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row my-4">
+  <div class="row my-4 d-flex justify-content-center">
     <div class="col-12 col-xxl-4 position-sticky custom-top z-3 fixed-height">
       <div class="custom-nav px-3 rounded-3 w-100">
         <div class="d-flex align-items-center gap-3">
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                   <h6 class="fw-bold m-0">Posts</h6>
-                  <div class="value">#X</div>
+                  <div class="value">#{{ nPost }}</div>
                 </div>
                 <div>
                   <h6 class="fw-bold m-0">Coffee</h6>
@@ -49,66 +49,21 @@
       </div>
     </div>
 
-    <!-- <div class="col-12 col-xxl-4">
-      <div class="position-sticky custom-top">
-        <h3 class="my-4"></h3>
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="custom-nav px-3 rounded-3 w-100">
-            <div class="d-flex align-items-start gap-3">
-              <div class="p-3 my-3">
-                <img
-                  src="{{ userImageProf }}"
-                  alt="profile avatar"
-                  class="img-navbar"
-                />
-              </div>
-              <div class="d-flex flex-column text-white py-2 flex-grow-1">
-                <h3 class="my-3">{{ userName }} {{ userSurname }}</h3>
-                <div
-                  class="d-flex flex-column justify-content-between row-gap-3 pe-3 pb-3"
-                >
-                  <div>
-                    <h6 class="fw-bold m-0">Email</h6>
-                    <p class="m-0">{{ userEmail }}</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <h6 class="fw-bold m-0">Città</h6>
-                      <p class="m-0">{{ userCity }}</p>
-                    </div>
-                    <div>
-                      <h6 class="fw-bold m-0">Phone</h6>
-                      <p class="m-0">{{ userPhone }}</p>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <h6 class="fw-bold m-0">User</h6>
-                      <div class="value">{{ userId }}</div>
-                    </div>
-                    <div>
-                      <h6 class="fw-bold m-0">Posts</h6>
-                      <div class="value">#X</div>
-                    </div>
-                    <div>
-                      <h6 class="fw-bold m-0">Coffee</h6>
-                      <div class="value infinity">∞</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <div class="col-12 col-xxl-8">
       <div class="row mt-5 mt-xxl-0">
         <ng-container *ngFor="let post of postsProf; let i = index">
           <div *ngIf="userId === post.userId" class="col-12 col-lg-6 mb-4 px-3">
             <div class="card pointer h-100 mb-2 text-white">
-              <div class="card-body">
+              <!-- ID: 1 è l'id dell'admin -->
+              <button
+                *ngIf="actUser.id === 1"
+                class="btn border-0 p-0 z-3 position-absolute m-4 end-0 top-0"
+                (click)="removePost(post.id)"
+                id="delete-btn"
+              >
+                <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
+              </button>
+              <div class="card-body" (click)="detailsPost(post.id)">
                 <div
                   class="d-flex justify-content-between align-items-baseline"
                 >
@@ -124,11 +79,12 @@
                   <button
                     class="btn border-0 p-0"
                     (click)="removePost(post.id)"
+                    *ngIf="userId === actUser.id"
                   >
                     <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
                   </button>
                 </div>
-                <h5 class="card-title text-capitalize">
+                <h5 class="card-title text-capitalize text-truncate">
                   {{ post.title }}
                 </h5>
                 <p class="card-text">
@@ -142,6 +98,7 @@
                     role="button"
                     aria-expanded="false"
                     (click)="addValue(form, post.id, $event)"
+                    *ngIf="userId === actUser.id"
                   >
                     <i class="bi bi-pencil-square fs-5 text-info"></i>
                   </a>
@@ -189,14 +146,32 @@
             </div>
           </div>
         </ng-container>
-        <div class="row">
-          <h3 class="text-center my-4">Commenti</h3>
+        <div class="col-12">
+          <h3
+            class="text-center text-white my-4"
+            *ngIf="commentPost.length > 0"
+          >
+            Commenti
+          </h3>
           <ng-container>
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let comment of commentPost">
-                <p>
-                  <strong>{{ comment.name }}</strong> - {{ comment.body }}
-                </p>
+            <ul class="list-group p-0">
+              <li
+                class="bg-card text-white p-3 list-unstyled border-1 border rounded-3 mb-3"
+                *ngFor="let comment of commentPost"
+              >
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="fw-bold text-capitalize m-0">
+                    {{ comment.name }}
+                  </p>
+                  <button
+                    class="btn border-0 p-0"
+                    (click)="removeComment(comment.id)"
+                    *ngIf="userId === actUser.id || actUser.id === 1"
+                  >
+                    <i class="bi bi-x-circle-fill fs-5 text-danger"></i>
+                  </button>
+                </div>
+                <p class="m-0 mb-2">{{ comment.body }}</p>
                 <p class="text-end fw-bold text-lowercase">
                   <small>{{ comment.email }}</small>
                 </p>

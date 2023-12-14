@@ -1,3 +1,5 @@
+<!-- navbar.component.html -->
+
 <nav class="navbar navbar-expand bg-postshare position-fixed">
   <div
     class="container-fluid d-flex justify-content-center align-items-start border-end border-white"
@@ -28,11 +30,11 @@
             <li class="nav-item" *ngIf="user">
               <a
                 class="nav-link"
-                aria-current="page"
                 [routerLink]="['/']"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
-                ><i class="bi bi-house-door-fill"></i>
+              >
+                <i class="bi bi-house-door-fill"></i>
                 <span class="title-nav"> Home</span>
               </a>
             </li>
@@ -41,7 +43,8 @@
                 class="nav-link"
                 [routerLink]="['/profile']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-circle"></i>
+              >
+                <i class="bi bi-person-circle"></i>
                 <span class="title-nav"> Profilo</span>
               </a>
             </li>
@@ -50,7 +53,8 @@
                 class="nav-link"
                 [routerLink]="['/backoffice']"
                 routerLinkActive="active"
-                ><i class="bi bi-plus-circle"></i>
+              >
+                <i class="bi bi-plus-circle"></i>
                 <span class="title-nav"> Crea Post</span>
               </a>
             </li>
@@ -59,7 +63,8 @@
                 class="nav-link"
                 [routerLink]="['/login']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-check"></i>
+              >
+                <i class="bi bi-person-check"></i>
                 <span class="title-nav"> Login</span>
               </a>
             </li>
@@ -68,14 +73,28 @@
                 class="nav-link"
                 [routerLink]="['/registration']"
                 routerLinkActive="active"
-                ><i class="bi bi-person-plus"></i>
+              >
+                <i class="bi bi-person-plus"></i>
                 <span class="title-nav"> Registrazione</span>
               </a>
             </li>
           </div>
-          <div class="align-self-start">
+          <div>
+            <li
+              class="nav-item d-flex justify-content-center justify-content-md-start"
+              *ngIf="user"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/assistenza']"
+                routerLinkActive="active"
+              >
+                <i class="bi bi-question-circle"></i>
+                <span class="title-nav"> Segnalazioni</span>
+              </a>
+            </li>
             <li class="nav-item" *ngIf="user">
-              <button class="btn text-dark" (click)="logout()">
+              <button class="btn text-dark m-0 p-2" (click)="logout()">
                 <i
                   class="bi bi-box-arrow-left bg-info p-3 rounded-2 d-flex align-self-center fs-5"
                 ></i>
