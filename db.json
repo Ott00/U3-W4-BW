@@ -307,12 +307,6 @@
     },
     {
       "userId": 2,
-      "title": null,
-      "body": null,
-      "id": 63
-    },
-    {
-      "userId": 2,
       "title": "Test",
       "body": "test",
       "id": 64
@@ -322,12 +316,6 @@
       "title": "Test",
       "body": "test",
       "id": 65
-    },
-    {
-      "userId": 2,
-      "title": "casc",
-      "body": "ac",
-      "id": 66
     },
     {
       "userId": 2,
@@ -1523,11 +1511,18 @@
       "id": 334
     },
     {
-      "postId": 64,
-      "id": 345,
-      "name": "asfasf",
+      "postId": 48,
+      "id": 335,
+      "name": "Test",
       "email": "ott@gmail.com",
-      "body": "asfasf"
+      "body": "test"
+    },
+    {
+      "postId": 58,
+      "id": 336,
+      "name": "Bel post",
+      "email": "ott@gmail.com",
+      "body": "bel post"
     }
   ],
   "assistenza": [
@@ -1922,6 +1917,13 @@
       "userId": 2,
       "userEmail": "ott@gmail.com",
       "id": 58
+    },
+    {
+      "oggetto": "Test",
+      "corpo": "test",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "id": 59
     }
   ]
 }
