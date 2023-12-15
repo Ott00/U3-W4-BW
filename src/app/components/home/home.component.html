@@ -25,7 +25,9 @@
                     <div id="img-card-profile">
                       <img src="{{ user.imageProf }}" alt="" />
                     </div>
-                      <p class="ms-2 fw-bold">{{ user.username }}</p>
+                    <p class="ms-2 fw-bold">
+                      {{ user.username }}
+                    </p>
                   </div>
                 </div>
                 <h5 class="card-title text-capitalize text-truncate">
@@ -46,9 +48,9 @@
       <p class="text-white fw-bold px-2">Utenti Suggeriti</p>
       <div
         class="mb-3 px-3"
-        *ngFor="let user of usersArr.slice(0, 5); let i = index"
+        *ngFor="let user of usersArr.slice(0, 6); let i = index"
       >
-        <div>
+        <div *ngIf="user.id !== userId">
           <div
             class="row px-3 d-flex align-items-center rounded-2 p-2 card-user pointer gap-3"
             [routerLink]="['/profile/' + user.id]"
