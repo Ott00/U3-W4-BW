@@ -50,11 +50,13 @@
             <div class="border rounded-3 p-2">
               <div class="text-center">
                 <span *ngIf="!email.completed" class="text-warning">
-                  <span class="fw-bold">#{{ email.oggetto }}</span>
+                  <span class="fw-bold">#{{ email.oggetto }}</span
+                  ><br />
                   In Lavorazione
                 </span>
                 <span *ngIf="email.completed" class="text-info">
-                  <span class="fw-bold">#{{ email.oggetto }}</span>
+                  <span class="fw-bold">#{{ email.oggetto }}</span
+                  ><br />
                   Completata, risposta dall'Admin:
                 </span>
               </div>
