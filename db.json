@@ -330,8 +330,8 @@
     },
     {
       "userId": 2,
-      "title": "Post Bello",
-      "body": "Ciao",
+      "title": "Post Luca",
+      "body": "Favaretto",
       "id": 68
     }
   ],
@@ -1467,13 +1467,6 @@
       "id": 334
     },
     {
-      "postId": 48,
-      "id": 335,
-      "name": "Test",
-      "email": "ott@gmail.com",
-      "body": "test"
-    },
-    {
       "postId": 58,
       "id": 336,
       "name": "Bel post",
@@ -1521,6 +1514,54 @@
       "userEmail": "dario@gmail.com",
       "completed": true,
       "id": 5
+    },
+    {
+      "oggetto": "seconda richiesta",
+      "corpo": "seconda richiesta",
+      "userId": 10,
+      "userEmail": "dario@gmail.com",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "oggetto": "ciao ",
+      "corpo": "ciao",
+      "userId": 10,
+      "userEmail": "dario@gmail.com",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "oggetto": "Problema 4",
+      "corpo": "Corpo Problema 4",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
+      "id": 8
+    },
+    {
+      "oggetto": "Luca favaretto",
+      "corpo": "Cheater su kraken",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
+      "id": 9
+    },
+    {
+      "oggetto": "Segnalo un problema",
+      "corpo": "Segnaliamo",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
+      "id": 10
+    },
+    {
+      "oggetto": "Ale è un pagliaccio",
+      "corpo": "Imbarazzante",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": false,
+      "id": 11
     }
   ],
   "risposte": [
@@ -1563,6 +1604,46 @@
       "emailId": 4,
       "completed": false,
       "id": 5
+    },
+    {
+      "corpo": "seconda risposta",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 6,
+      "completed": false,
+      "id": 6
+    },
+    {
+      "corpo": "risposta 2",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 7,
+      "completed": false,
+      "id": 7
+    },
+    {
+      "corpo": "Problema 4 risolve",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 8,
+      "completed": false,
+      "id": 8
+    },
+    {
+      "corpo": "Non ti preoccupare lo banniamo subito ",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 9,
+      "completed": false,
+      "id": 9
+    },
+    {
+      "corpo": "Grazie per la segnalazione",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 10,
+      "completed": false,
+      "id": 10
     }
   ]
 }

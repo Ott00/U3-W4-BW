@@ -1,9 +1,9 @@
 <!-- assistenza.component.html -->
 <div *ngIf="userId > 1 || userId === 0; else admin">
   <div class="container mt-3 d-flex flex-column align-items-center text-light">
-    <div class="row justify-content-center align-items-center">
-      <div class="text-light">
-        <form #form="ngForm" (ngSubmit)="sendEmail(form)" class="help-box my-5">
+    <div class="row justify-content-center px-3">
+      <div class="col-12 col-lg-6 text-light mb-2">
+        <form #form="ngForm" (ngSubmit)="sendEmail(form)" class="help-box my-3">
           <h1 class="fw-bold mb-4">Segnala un problema:</h1>
           <div class="mb-3 user-box">
             <label for="oggetto" class="form-label">Oggetto</label>
@@ -33,47 +33,71 @@
           </button>
         </form>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h1 class="text-light">I miei ticket</h1>
-      <div *ngFor="let email of emails">
-        <div class="card admin-card m-3" *ngIf="userId === email.userId">
-          <h5 class="card-header border-bottom border-1">
-            Inviata da: {{ email.userEmail }}
-          </h5>
-
-          <div class="card-body">
-            <h5 class="card-title">{{ email.oggetto }}</h5>
-            <p class="card-text">
-              {{ email.corpo }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-6">
-      <h1 class="text-light">Risposte ai miei ticket</h1>
-      <div *ngFor="let answer of answers">
-        <ng-container *ngFor="let email of emails">
-          <div
-            class="card admin-card m-3"
-            *ngIf="answer.emailId === email.id && userId === email.userId"
-          >
+      <div class="col-12 col-lg-6">
+        <div *ngFor="let email of emails" class="my-3">
+          <div class="card admin-card mb-3" *ngIf="userId === email.userId">
             <h5 class="card-header border-bottom border-1">
-              Inviata da: {{ answer.userEmail }}
+              Inviata da: {{ email.userEmail }}
             </h5>
 
             <div class="card-body">
-              <h5 class="card-title">{{ answer.oggetto }}</h5>
+              <h5 class="card-title">{{ email.oggetto }}</h5>
               <p class="card-text">
-                {{ answer.corpo }}
+                {{ email.corpo }}
               </p>
             </div>
+
+            <div class="border rounded-3 p-2">
+              <div class="text-center">
+                <span *ngIf="!email.completed" class="text-warning">
+                  <span class="fw-bold">#{{ email.oggetto }}</span>
+                  In Lavorazione
+                </span>
+                <span *ngIf="email.completed" class="text-info">
+                  <span class="fw-bold">#{{ email.oggetto }}</span>
+                  Completata, risposta dall'Admin:
+                </span>
+              </div>
+              <div class="card-body" *ngIf="email.completed">
+                <div class="card-text">
+                  <div *ngFor="let answer of answers">
+                    <div
+                      class="admin-card rounded-3"
+                      *ngIf="
+                        answer.emailId === email.id && userId === email.userId
+                      "
+                    >
+                      <div class="card-body">
+                        {{ answer.corpo }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </ng-container>
+        </div>
+
+        <!-- <h1 class="text-light">Risposte ai miei ticket</h1>
+        <div *ngFor="let answer of answers">
+          <ng-container *ngFor="let email of emails">
+            <div
+              class="card admin-card m-3"
+              *ngIf="answer.emailId === email.id && userId === email.userId"
+            >
+              <h5 class="card-header border-bottom border-1">
+                Inviata da: {{ answer.userEmail }}
+              </h5>
+
+              <div class="card-body">
+                <h5 class="card-title">{{ answer.oggetto }}</h5>
+                <p class="card-text">
+                  {{ answer.corpo }}
+                </p>
+              </div>
+            </div>
+          </ng-container>
+        </div> -->
       </div>
     </div>
   </div>
