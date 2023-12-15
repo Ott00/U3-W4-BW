@@ -200,4 +200,24 @@ export class ProfileComponent implements OnInit {
       this.id = +parm['id'];
     });
   }
+  removeProfile() {
+    if (this.actUser.id === 1 || this.actUser) {
+      const confirmDelete = confirm(
+        'Sei sicuro di voler eliminare il profilo?'
+      );
+
+      if (confirmDelete) {
+        if (this.user[0] !== null) {
+          this.postSrv.removeUser(this.user[0].id).subscribe(() => {
+            console.log('Profilo eliminato con successo');
+            this.router.navigate(['/']);
+          });
+        } else {
+          console.log('userId non è un numero valido.');
+        }
+      }
+    } else {
+      console.log('Non sei autorizzato a eliminare un profilo.');
+    }
+  }
 }

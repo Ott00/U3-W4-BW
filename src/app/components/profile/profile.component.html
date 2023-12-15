@@ -183,3 +183,6 @@
     </div>
   </div>
 </div>
+<div *ngIf="userId !== actUser.id && actUser.id === 1 || userId === actUser.id && actUser.id !== 1">
+  <button (click)="removeProfile()">Elimina Profilo</button>
+</div>

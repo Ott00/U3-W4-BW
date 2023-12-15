@@ -19,7 +19,10 @@ export class PostsService {
   risposteApi: string = environment.risposteApi;
 
   constructor(private http: HttpClient) {}
-
+  removeUser(userId: number): Observable<void> {
+    const url = `${this.userApi}/${userId}`;
+    return this.http.delete<void>(url);
+  }
   getPosts() {
     return this.http.get<Post[]>(this.postApi);
   }
