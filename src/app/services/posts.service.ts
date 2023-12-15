@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Email } from '../models/email';
 import { Faq } from '../models/faq';
+import { UserBan } from '../models/user-ban';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +17,16 @@ export class PostsService {
   commentApi: string = environment.commentApi;
   userApi: string = environment.userApi;
   emailApi: string = environment.emailApi;
+  banUser: string = environment.banApi;
 
   constructor(private http: HttpClient) {}
+  removeUser(userId: number): Observable<void> {
+    const url = `${this.userApi}/${userId}`;
+    return this.http.delete<void>(url);
+  }
+  setUserBan(data: { email: string }) {
+    return this.http.post<UserBan>(` ${this.banUser}`, data);
+  }
 
   getPosts() {
     return this.http.get<Post[]>(this.postApi);

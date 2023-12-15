@@ -107,6 +107,7 @@ const routes: Route[] = [
       multi: true,
     },
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

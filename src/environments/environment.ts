@@ -9,6 +9,7 @@ export const environment = {
   userApi: 'http://localhost:4201/users',
   commentApi: 'http://localhost:4201/comments',
   emailApi: 'http://localhost:4201/assistenza',
+  banApi: 'http://localhost:4201/banned',
 };
 
 /*
