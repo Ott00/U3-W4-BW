@@ -8,7 +8,6 @@ import { from } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
 import { PopupNotificationService } from 'src/app/services/popup-notification.service';
-import { UserBan } from 'src/app/models/user-ban';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -38,7 +37,6 @@ export class ProfileComponent implements OnInit {
   commentPost: Comment[] = [];
   users: User[] = [];
   user: User[] = [];
-  email!: UserBan;
 
   postFocus: boolean = false;
 
@@ -203,7 +201,7 @@ export class ProfileComponent implements OnInit {
     });
   }
   removeProfile() {
-    if (this.actUser.id === 1) {
+    if (this.actUser.id === 1 || this.actUser) {
       const confirmDelete = confirm(
         'Sei sicuro di voler eliminare il profilo?'
       );
@@ -213,33 +211,6 @@ export class ProfileComponent implements OnInit {
           this.postSrv.removeUser(this.user[0].id).subscribe(() => {
             console.log('Profilo eliminato con successo');
             this.router.navigate(['/']);
-          });
-        } else {
-          console.log('userId non è un numero valido.');
-        }
-      }
-    } else {
-      console.log('Non sei autorizzato a eliminare un profilo.');
-    }
-  }
-  badUserBan() {
-    if (this.actUser.id === 1) {
-      const confirmDelete = confirm(
-        'Sei sicuro di voler eliminare il profilo?'
-      );
-
-      if (confirmDelete) {
-        if (this.user[0] !== null) {
-          this.postSrv.removeUser(this.user[0].id).subscribe(() => {
-            console.log('Profilo eliminato con successo');
-            this.router.navigate(['/']);
-          });
-          const userBan: UserBan = {
-            email: this.user[0].email,
-          };
-
-          this.postSrv.setUserBan(userBan).subscribe(() => {
-            console.log('Utente bannato con successo');
           });
         } else {
           console.log('userId non è un numero valido.');

@@ -15,13 +15,13 @@ import {
 })
 export class RegistrationComponent implements OnInit {
   form!: FormGroup;
-
+  
   constructor(
     private authSrv: AuthService,
     private router: Router,
-    private fb: FormBuilder
-  ) {}
-
+    private fb: FormBuilder,
+    ) {}
+    
   ngOnInit(): void {
     this.form = this.fb.group({
       name: this.fb.control(null, [Validators.required]),
