@@ -35,26 +35,117 @@
       </div>
     </div>
   </div>
-</div>
-<ng-template #admin>
-  <div class="text-light">
-    <h1 class="my-5 ms-3">Segnalazioni</h1>
-    <div class="card admin-card m-3" *ngFor="let email of emails">
-      <h5 class="card-header border-bottom border-1">
-        Inviata da: {{ email.userEmail }}
-      </h5>
+  <div class="row">
+    <div class="col-6">
+      <h1 class="text-light">I miei ticket</h1>
+      <div *ngFor="let email of emails">
+        <div class="card admin-card m-3" *ngIf="userId === email.userId">
+          <h5 class="card-header border-bottom border-1">
+            Inviata da: {{ email.userEmail }}
+          </h5>
 
-      <div class="card-body">
-        <h5 class="card-title">{{ email.oggetto }}</h5>
-        <p class="card-text">
-          {{ email.corpo }}
-        </p>
-        <button
-          class="btn btn-outline-info px-3"
-          (click)="removeEmail(email.id)"
-        >
-          Visto
-        </button>
+          <div class="card-body">
+            <h5 class="card-title">{{ email.oggetto }}</h5>
+            <p class="card-text">
+              {{ email.corpo }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <h1 class="text-light">Risposte ai miei ticket</h1>
+      <div *ngFor="let answer of answers">
+        <ng-container *ngFor="let email of emails">
+          <div
+            class="card admin-card m-3"
+            *ngIf="answer.emailId === email.id && userId === email.userId"
+          >
+            <h5 class="card-header border-bottom border-1">
+              Inviata da: {{ answer.userEmail }}
+            </h5>
+
+            <div class="card-body">
+              <h5 class="card-title">{{ answer.oggetto }}</h5>
+              <p class="card-text">
+                {{ answer.corpo }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #admin>
+  <div class="col-12 text-light">
+    <h1 class="my-5 ms-3">Segnalazioni</h1>
+    <div *ngFor="let email of emails">
+      <div class="card admin-card m-3" *ngIf="!email.completed">
+        <h5 class="card-header border-bottom border-1">
+          Inviata da: {{ email.userEmail }}
+        </h5>
+
+        <div class="card-body">
+          <h5 class="card-title">{{ email.oggetto }}</h5>
+          <p class="card-text">
+            {{ email.corpo }}
+          </p>
+
+          <a
+            data-bs-toggle="collapse"
+            class="btn btn-outline-info px-3"
+            href="#{{ email.id }}"
+          >
+            Rispondi
+          </a>
+        </div>
+        <div class="collapse px-3 mb-4" id="{{ email.id }}">
+          <div class="card card-body card-focus text-white">
+            <form
+              #form="ngForm"
+              (ngSubmit)="sendAnswer(form, email.id)"
+              (ngSubmit)="changeStatus(email, email.id)"
+            >
+              <div class="form-group">
+                <label for="title" class="fw-bold">Titolo</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="oggetto"
+                  required
+                  class="form-control"
+                  [ngModel]="email.oggetto"
+                  disabled
+                />
+              </div>
+              <div class="form-group">
+                <label for="body" class="fw-bold">Risposta</label>
+                <textarea
+                  type="text"
+                  id="body"
+                  name="corpo"
+                  required
+                  class="form-control"
+                  ngModel
+                  cols="20"
+                  rows="5"
+                ></textarea>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button
+                  type="submit"
+                  class="btn btn-outline-info px-3 my-2"
+                  [disabled]="form.invalid"
+                >
+                  Invia
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

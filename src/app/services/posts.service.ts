@@ -16,6 +16,7 @@ export class PostsService {
   commentApi: string = environment.commentApi;
   userApi: string = environment.userApi;
   emailApi: string = environment.emailApi;
+  risposteApi: string = environment.risposteApi;
 
   constructor(private http: HttpClient) {}
 
@@ -61,7 +62,18 @@ export class PostsService {
     return this.http.get<Faq[]>(this.emailApi);
   }
 
+  getAnswers() {
+    return this.http.get<Faq[]>(this.risposteApi);
+  }
   removeEmail(emailId: number) {
     return this.http.delete(`${this.emailApi}/${emailId}`);
+  }
+
+  sendAnswer(email: Faq) {
+    return this.http.post<Email>(`${this.risposteApi}`, email);
+  }
+
+  changeCompl(email: Partial<Email>, emailId: number): Observable<Email> {
+    return this.http.patch<Email>(`${this.emailApi}/${emailId}`, email);
   }
 }
