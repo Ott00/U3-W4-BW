@@ -98,6 +98,17 @@
       "city": "Aosta Valley",
       "phone": "3457698672",
       "id": 9
+    },
+    {
+      "email": "dario@gmail.com",
+      "password": "$2a$10$tZ32JDCM38iHhGXfWL0Ojux23h3vqBCqNtorwi6UAEvhMDoh.4E/.",
+      "name": "Dario",
+      "surname": "Dadegi",
+      "username": "dadegi",
+      "imageProf": "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Milano",
+      "phone": "3272099899",
+      "id": 10
     }
   ],
   "posts": [
@@ -1472,404 +1483,86 @@
   ],
   "assistenza": [
     {
-      "oggetto": "ale ale ale ale ",
-      "corpo": "aleeeeeeeeeeeeeeeeeeeee",
+      "oggetto": "Il sito è rotto",
+      "corpo": "Non vedo più i post",
       "userId": 6,
       "userEmail": "ale@ale.com",
       "completed": true,
       "id": 1
     },
     {
-      "oggetto": "otttt",
-      "corpo": "ottttt",
+      "oggetto": "Non vedo i profili",
+      "corpo": "I profili non funzionano",
       "userId": 2,
       "userEmail": "ott@gmail.com",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "oggetto": "Nuovo ticket",
+      "corpo": "Test",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "oggetto": "test 3",
+      "corpo": "test 3",
+      "userId": 2,
+      "userEmail": "ott@gmail.com",
+      "completed": true,
       "id": 4
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 5
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 6
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 7
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 8
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 9
-    },
-    {
-      "oggetto": "te",
-      "corpo": "te",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 10
-    },
-    {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 11
-    },
-    {
-      "oggetto": "te",
-      "corpo": "te",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 12
-    },
-    {
-      "oggetto": "test",
-      "corpo": "tet",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 13
     },
     {
       "oggetto": "Test",
       "corpo": "Test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 14
+      "userId": 10,
+      "userEmail": "dario@gmail.com",
+      "completed": true,
+      "id": 5
+    }
+  ],
+  "risposte": [
+    {
+      "corpo": "Dovremmo aver sistemato",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 1,
+      "completed": false,
+      "id": 1
     },
     {
-      "oggetto": "test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 15
+      "corpo": "Ticket risolto, ricontrolla",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 2,
+      "completed": false,
+      "id": 2
     },
     {
-      "oggetto": null,
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 16
+      "corpo": "Risposta al test",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 3,
+      "completed": false,
+      "id": 3
     },
     {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 17
+      "corpo": "Risolto",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 5,
+      "completed": false,
+      "id": 4
     },
     {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 18
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 19
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 20
-    },
-    {
-      "oggetto": null,
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 21
-    },
-    {
-      "oggetto": null,
-      "corpo": "s",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 22
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 23
-    },
-    {
-      "oggetto": "s",
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 24
-    },
-    {
-      "oggetto": "s",
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 25
-    },
-    {
-      "oggetto": null,
-      "corpo": "s",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 26
-    },
-    {
-      "oggetto": "asfasf",
-      "corpo": "asfasf",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 27
-    },
-    {
-      "oggetto": "test",
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 28
-    },
-    {
-      "oggetto": "Fa",
-      "corpo": "fa",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 29
-    },
-    {
-      "oggetto": null,
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 30
-    },
-    {
-      "oggetto": "saf",
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 31
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 32
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 33
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 34
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 35
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 36
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 37
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 38
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 39
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 40
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 41
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 42
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 43
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 44
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 45
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 46
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 47
-    },
-    {
-      "oggetto": "55",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 48
-    },
-    {
-      "oggetto": "",
-      "corpo": "6",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 49
-    },
-    {
-      "oggetto": "Test",
-      "corpo": "Test2",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 50
-    },
-    {
-      "oggetto": null,
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 51
-    },
-    {
-      "oggetto": "a",
-      "corpo": null,
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 52
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 53
-    },
-    {
-      "oggetto": "",
-      "corpo": "s",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 54
-    },
-    {
-      "oggetto": "",
-      "corpo": "s",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 55
-    },
-    {
-      "oggetto": "teste",
-      "corpo": "stes",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 56
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 57
-    },
-    {
-      "oggetto": "",
-      "corpo": "",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 58
-    },
-    {
-      "oggetto": "Test",
-      "corpo": "test",
-      "userId": 2,
-      "userEmail": "ott@gmail.com",
-      "id": 59
+      "corpo": "risposto",
+      "userId": 1,
+      "userEmail": "admin@gmail.com",
+      "emailId": 4,
+      "completed": false,
+      "id": 5
     }
   ]
 }

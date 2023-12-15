@@ -104,11 +104,7 @@
         </div>
         <div class="collapse px-3 mb-4" id="{{ email.id }}">
           <div class="card card-body card-focus text-white">
-            <form
-              #form="ngForm"
-              (ngSubmit)="sendAnswer(form, email.id)"
-              (ngSubmit)="changeStatus(email, email.id)"
-            >
+            <form #form="ngForm" (ngSubmit)="sendAnswer(form, email.id)">
               <div class="form-group">
                 <label for="title" class="fw-bold">Titolo</label>
                 <input
@@ -139,6 +135,7 @@
                   type="submit"
                   class="btn btn-outline-info px-3 my-2"
                   [disabled]="form.invalid"
+                  (click)="changeStatus(email, email.id)"
                 >
                   Invia
                 </button>

@@ -46,11 +46,8 @@ export class AssistenzaComponent implements OnInit {
       const helpMe = JSON.parse(user);
       this.userId = helpMe.user.id;
       this.userEmail = helpMe.user.email;
-      console.log(this.userId);
-      console.log(this.userEmail);
     }
     this.getFaqs();
-    console.log(this.emails);
     this.getAnswers();
   }
 
@@ -68,6 +65,7 @@ export class AssistenzaComponent implements OnInit {
           'Feedback inviato correttamente!'
         );
         console.log('Email inviata con successo', response);
+        this.getFaqs();
         form.resetForm();
       });
     } else {
@@ -86,6 +84,7 @@ export class AssistenzaComponent implements OnInit {
   getFaqs() {
     this.postSrv.getAssistance().subscribe((emails: Faq[]) => {
       this.emails = emails;
+      this.emails.reverse();
 
       console.log(this.emails);
     });
@@ -121,16 +120,25 @@ export class AssistenzaComponent implements OnInit {
 
     console.log(this.newAnswer);
 
-    this.postSrv.sendAnswer(this.newAnswer).subscribe(
-      (response) => {
-        console.log('Risposta inviata con successo', response);
-        form.resetForm();
-      },
-      (error) => {
-        console.error("Errore nell'invio dell'email:", error);
-      }
-    );
-    console.log(form.value);
+    if (this.newAnswer.corpo) {
+      this.postSrv.sendAnswer(this.newAnswer).subscribe(
+        (response) => {
+          console.log('Risposta inviata con successo', response);
+          this.alertSrv.toastNotificationSuccess(
+            'Risposta inviata correttamente!'
+          );
+          form.resetForm();
+        },
+        (error) => {
+          console.error("Errore nell'invio dell'email:", error);
+        }
+      );
+      console.log(form.value);
+    } else {
+      this.alertSrv.toastNotificationError(
+        'Il corpo della risposta non è presente!'
+      );
+    }
   }
 
   changeStatus(email: Email, emailId: any) {
