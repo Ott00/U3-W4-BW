@@ -12,6 +12,17 @@
       "id": 1
     },
     {
+      "email": "ott@gmail.com",
+      "password": "$2a$10$9Ko6ZpWk.Cctcs/mcka9jupRu.OhXS2nsW6cUw77JTtvMp.MhAEBu",
+      "name": "Ott",
+      "surname": "Ott",
+      "username": "Ott",
+      "imageProf": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Fano",
+      "phone": "3334447788",
+      "id": 2
+    },
+    {
       "email": "ale@gmail.com",
       "password": "$2a$10$LiMBO6JBr6iUJX.v5KtRje/c1uUQPaElwEgINTxENabcxSZDf4FIC",
       "name": "Ale",
@@ -21,6 +32,17 @@
       "city": "Trento",
       "phone": "32525625696",
       "id": 3
+    },
+    {
+      "email": "ros@gmail.com",
+      "password": "$2a$10$XVnCsZnY93mdtCDT62WWOemx3zk1LX.1uQ8.gSoNJ4cqzAxGwtanC",
+      "name": "rosario",
+      "surname": "ros",
+      "username": "ros",
+      "imageProf": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Sicilia",
+      "phone": "2145858989",
+      "id": 4
     },
     {
       "email": "dino@gmail.com",
@@ -45,6 +67,17 @@
       "id": 6
     },
     {
+      "email": "samueless001@gmail.com",
+      "password": "$2a$10$nBpIrzc7MTc/zvX/ZYh3t.VPKrZSmalpogayuPzBZsQsmxlvnKeVe",
+      "name": "Samuele",
+      "surname": "Simeone",
+      "username": "s.simeone8",
+      "imageProf": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "city": "Taranto",
+      "phone": "23457865",
+      "id": 7
+    },
+    {
       "email": "rosariosca12@icloud.com",
       "password": "$2a$10$xnlCk2BqnXPRechEl3915.cdUuTtw65IQJ187GnpwOpVmEPZIUKGS",
       "name": "Rosario",
@@ -54,28 +87,6 @@
       "city": "Aosta Valley",
       "phone": "3457698672",
       "id": 8
-    },
-    {
-      "email": "samueless001@gmail.com",
-      "password": "$2a$10$lph2Fdxom6jV/B8gl1TDReQpx/JnLJErUJrhgm7/hTdy7C84XBgpi",
-      "name": "samuele",
-      "surname": "simeone",
-      "username": "banned",
-      "imageProf": "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "city": "Aosta Valley",
-      "phone": "3457698672",
-      "id": 9
-    },
-    {
-      "email": "dario@gmail.com",
-      "password": "$2a$10$tZ32JDCM38iHhGXfWL0Ojux23h3vqBCqNtorwi6UAEvhMDoh.4E/.",
-      "name": "Dario",
-      "surname": "Dadegi",
-      "username": "dadegi",
-      "imageProf": "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "city": "Milano",
-      "phone": "3272099899",
-      "id": 10
     }
   ],
   "posts": [
