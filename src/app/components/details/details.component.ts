@@ -22,6 +22,8 @@ export class DetailsComponent implements OnInit {
   user: User[] = [];
   email!: string;
   newComment: Comment = { postId: 0, id: 0, name: '', email: '', body: '' };
+  actUser!: User;
+  idUser!: number 
 
   constructor(
     private postSrv: PostsService,
@@ -35,6 +37,7 @@ export class DetailsComponent implements OnInit {
     this.getComments();
     this.getEmailFromLocalStorage();
     this.getUsers();
+    this.takeUser()
   }
 
   getPostDetail() {
@@ -93,5 +96,25 @@ export class DetailsComponent implements OnInit {
       this.alertSrv.toastNotificationError('Nessun commento è stato inserito');
     }
     console.log(this.newComment);
+  }
+
+  takeUser(){
+    const userString = localStorage.getItem('user');
+
+      if (userString) {
+        const user = JSON.parse(userString);
+        this.actUser = user.user;
+        this.idUser = this.actUser.id
+        console.log(this.actUser);
+        console.log(this.idUser);
+        
+      }
+  }
+  removeComment(commentId: any) {
+    this.postSrv.removeComment(commentId).subscribe(() => {
+      this.alertSrv.toastNotificationSuccess('Commento rimosso');
+      console.log('Commento rimosso!');
+      this.getComments();
+    });
   }
 }
